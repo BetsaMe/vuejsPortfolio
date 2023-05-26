@@ -108,7 +108,7 @@ export default {
       if (nextId > this.projets.length) {
         return;
       } else {
-        this.$router.replace({ path: "/" + nextId });
+        this.$router.replace({ path: "/work/" + nextId });
       }
     },
     goBack() {
@@ -117,7 +117,7 @@ export default {
       if (prevId < 1) {
         return;
       } else {
-        this.$router.replace({ path: "/" + prevId });
+        this.$router.replace({ path: "/work/" + prevId });
       }
     },
   },

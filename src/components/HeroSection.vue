@@ -2,7 +2,7 @@
   <section id="hero">
     <div class="center-bloc">
       <p class="hello fade-in">Hello! {{ $t("hello") }}</p>
-      <h1 class="fade-in">UI UX Designer</h1>
+      <h1 class="fade-in">{{ $t("designerText") }}</h1>
       <h2 class="fade-in second-line">& {{ $t("devText") }}</h2>
       <p class="fade-in description">{{ $t("description") }}<span>🎨👩🏽‍💻✨💫</span></p>
     </div>
@@ -129,7 +129,7 @@ h1,
   h1,
   .second-line {
     font-size: 14vw;
-    line-height: 90%;
+    line-height: 105%;
   }
 }
 </style>

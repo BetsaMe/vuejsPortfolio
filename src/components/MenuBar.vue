@@ -253,12 +253,14 @@ nav.scrolled {
   }
 }
 @media only screen and (max-width: 480px) {
-  .btn-profile span,
+  
   .btn-home p {
-    font-size: 14px;
+    font-size: 20px;
+    color: var(--grey1);
+    margin-top: 30px;
   }
   .logo-mobile {
-    display: block;
+    display: block;    
   }
   .logo-desktop {
     display: none;
