@@ -1,0 +1,42 @@
+{
+  "buttonProfile":"Profil",
+  "hello":"je m'appelle Betsabé, je suis",
+  "devText":"Intégratrice.",
+  "description": "Je suis là pour t'accompagner dans la création ou la refonte d'interfaces web et pour t'aider à donner vie à tes projets.",
+  "projectTitle":"Projets",
+  "about":"À propos",
+  "aboutP1":"Je m'appelle Betsabé, mon travail combine expérience utilisateur, conception visuelle et développement frontend.",
+  "aboutP2":"Après avoir travaillé pendant plusieurs années en tant qu'architecte, j'ai réorienté ma carrière vers une nouvelle passion : la création de produits numériques.",
+  "aboutP3":"Mon parcours professionnel m'a permis d'acquérir une grande sensibilité aux détails visuels, ainsi qu'une grande curiosité pour les aspects techniques. C'est pourquoi le développement frontend m'intéresse particulièrement.",
+  "aboutP4":"Je travaille actuellement en freelance et je suis à la recherche d'un contrat permanent. Si tu souhaites travailler avec moi, n'hésite pas à me contacter.",
+  "happy":{
+    "homeText":"Le design thinking comme outil de résolution des problèmes.",
+    "resume":"Happy life est un projet qui visait à comprendre et à trouver des solutions innovantes aux problèmes d'isolement social résultant de la pandémie de Covid 19. À cette fin, une recherche sur les utilisateurs et différents exercices de réflexion ont été réalisés en utilisant le design thinking comme instrument."
+  },
+  "figy":{
+    "homeText":"Conception d'une marketplace app pour la vente de produits phygitaux et écologiques.",
+    "resume":"FIGY est une application mobile, conçue comme projet de fin d'études pour le Mastère en expérience utilisateur d'Elisava. Il s'agit d'une plateforme disruptive qui propose des produits écologiques associés à un NFT, garantissant leur traçabilité."
+  },
+  "wand":{
+    "homeText":"Conception d'une application domotique pour le contrôle des appareils connectés de la maison.",
+    "resume": "Wand est un projet qui consistait en la création d'une application pour une maison intelligente. L'objectif du client était de centraliser l'utilisation de tous les objets connectés d'une maison, même s'ils appartiennent à des marques différentes, dans une seule application."
+  },
+  "groupomania":{
+    "homeText":"Création d'un réseau social d'entreprise pour améliorer la satisfaction des employés.",
+    "resume":"Projet accompli dans le cadre de la formation de développeur web chez Openclassrooms, en France. Le réseau social interne du groupe Groupomania, permet de créer un compte utilisateur, de se connecter et de participer au forum interne de l'entreprise."
+  }, 
+
+  "hot":{
+    "homeText":"Création d'une API pour une application web de sauces piquantes.",
+    "resume":"Création d'une API pour une application web où les utilisateurs peuvent recommander leurs sauces piquantes préférées et également noter les sauces postées par d'autres utilisateurs."
+  },
+  "csm":{
+    "homeText":"Défi d'intégration web, créé par le site web de frontend practice.",
+    "resume":"Défi d'intégration web, proposé par le site frontendpractice.com. L'exercice consistait à recréer la page d'accueil de canal street market, en prenant en compte le style graphique, les couleurs, la typographie, les animations, etc. La maquette est également responsive"
+  },
+  "cv":{
+    "homeText":"Création de thème personnalisé sur Wordpress.",
+    "resume":"Blog créé avec wordpress. Le projet consiste en la création et l'intégration d'un thème personnalisé pour wordpress, la création d'une base de données, et sa mise en ligne."
+  }
+}
+

@@ -1,0 +1,43 @@
+{
+    "buttonProfile":"Profile",
+    "hello":"My name is Betsabé, I'm",
+    "devText":"developer.",
+    "description": "I can help you in bringing your projects to life through the creation or redesign of user-friendly and visually appealing web interfaces.",
+    "projectTitle":"Projects",
+    "projets":{
+      "figy":"FIGY is a mobile app, designed as a final project for the Master's Degree in User Experience by Elisava, in Spain. It's a disruptive platform that offers sustainable products associated with an NFT, guaranteeing their traceability.",
+      "groupomania":"Project completed during the web developer training program at Openclassrooms, in France. The Groupomania group's internal social network, allows to create a user account, connect and participate in the company's internal forum.",
+      "wand":"This project consisted of research, architecture, UX writing, and design of a smart home app for the Master's Degree in Experience Design by ELISAVA.",
+      "hot":"Creation of an API for a web application where users can recommend their favorite hot sauces and rate other users' choices."
+    },
+    "about":"About",
+    "aboutP1":"Hi I'm Betsabé, my work combines user experience, visual design, and frontend development.",
+    "aboutP2":"After working as an architect for several years, I've shifted my focus to creating digital products. I'm passionate about web design, user-centric experiences and creating products that improve people's lives.",
+    "aboutP3":"My background in architecture has given me a great sensitivity towards visual details, and a great curiosity for the technical aspect, so another area that interests me is frontend development.",
+    "aboutP4":"I'm currently working as a freelance, and I'm looking for new professional opportunities or a permanent contract. If you want to work with me do not hesitate to contact me.",
+    "happy":{
+      "homeText":"Design thinking as a tool to solve today's problems",
+      "resume":"HappyLife is a project that aims to find a solution to the problem of social isolation, with a design thinking approach."
+    },
+    "figy":{
+      "homeText":"Design of a marketplace app for the sale of phygital and ecological products",
+      "resume":"FIGY is a mobile app, designed as a final project for the Master's Degree in User Experience by Elisava, in Spain. It's a disruptive platform that offers sustainable products associated with an NFT, guaranteeing their traceability."
+    },
+    "wand":{
+      "homeText":"Design of a domotic application for the control of the connected devices of the house.",
+      "resume":"This project consisted of research, architecture, UX writing, and design of a smart home app for the Master's Degree in Experience Design by ELISAVA."
+    },
+    "groupomania":{
+      "homeText":"Creating a corporate social network to improve employee satisfaction.",
+      "resume":"Project completed during the web developer training program at Openclassrooms, in France. The Groupomania group's internal social network, allows to create a user account, connect and participate in the company's internal forum."
+    },
+    "hot":{
+      "homeText":"Creation of an API for a hot sauce web application",
+      "resume":"Creation of an API for a web application where users can recommend their favorite hot sauces and rate other users' choices.."
+    },
+    "cv":{
+      "homeText":"Custom theme creation on Wordpress.",
+      "resume":"Blog created with wordpress. The project consists of the creation and integration of a custom theme for wordpress, the creation of a database, and its online publishing."
+    }
+  }
+  
