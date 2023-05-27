@@ -17,7 +17,7 @@
         <span
           class="text underlined-02"
           :class="!typeOfProject ? 'selected-tab' : ''"
-          >Development</span
+          >{{ $t("filtertext") }}</span
         >
       </li>
     </ul>
@@ -85,7 +85,6 @@ export default {
   position: relative;
   padding: 10px 10px 0;
   text-decoration: none;
-  color: var(--grey1);
   text-transform: uppercase;
   cursor: pointer;
   display: flex;
@@ -146,7 +145,6 @@ export default {
     flex-direction: column;
     align-items: flex-start;
     margin: 0;
-    padding: 10px 20px;
   }
   .project-selection h3 {
     font-size: 65px;

@@ -5,7 +5,7 @@
     class="btn-download"
   >
     <img src="/images/arrow-01.svg" alt="arrow" class="icon-arrow before" />
-    <span class="label">download cv</span>
+    <span class="label">{{ $t("download") }}</span>
     <img src="/images/whitearrow-01.svg" alt="arrow" class="icon-arrow after" />
   </a>
 </template>
@@ -21,7 +21,6 @@ export default {
   display: inline-block;
   font-size: 15px;
   line-height: 24px;
-  width: 250px;
   min-width: 250px;
   padding: 12px 32px 12px 82px;
   position: relative;

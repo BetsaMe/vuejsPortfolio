@@ -1,7 +1,6 @@
 <template>
   <section id="hero">
     <div class="center-bloc">
-      <p class="hello fade-in">Hello! {{ $t("hello") }}</p>
       <h1 class="fade-in">{{ $t("designerText") }}</h1>
       <h2 class="fade-in second-line">& {{ $t("devText") }}</h2>
       <p class="fade-in description">{{ $t("description") }}<span>🎨👩🏽‍💻✨💫</span></p>
@@ -55,10 +54,6 @@ export default {
   flex-direction: column;
   justify-content: center;
 }
-.hello {
-  font-size: 1.1em;
-  margin-bottom: 15px;
-}
 h1,
 h2,
 .second-line,
@@ -90,10 +85,12 @@ h1,
   .center-bloc {
     padding: 85px 30px 0;
   }
+  .description {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 768px) {
   .description {
-    width: 100%;
     margin: 30px 0;
   }
   .center-bloc {
@@ -119,11 +116,6 @@ h1,
   .description {
     font-size: 1.1em;
     text-align: start;
-    padding-left: 5px;
-  }
-  .hello {
-    font-size: 1.1em;
-    margin-bottom: 18px;
     padding-left: 5px;
   }
   h1,

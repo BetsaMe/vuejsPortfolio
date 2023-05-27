@@ -22,7 +22,6 @@
 <script>
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: "FooterSection",
@@ -40,6 +39,8 @@ export default {
     };
   },
   mounted() {
+    ScrollTrigger.refresh();
+    gsap.registerPlugin(ScrollTrigger);
     this.parallaxContact();
   },
   methods: {
@@ -181,7 +182,7 @@ export default {
     padding: 8px 0 0;
   }
   .bloc-contact li {
-    margin: 3px;
+    margin: 5px;
     font-size: 15px;
   }
 }

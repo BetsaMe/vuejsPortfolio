@@ -1,10 +1,10 @@
 {
     "buttonProfile":"Profile",
-    "hello":"My name is Betsabé, I'm",
     "designerText":"UI UX Designer",
     "devText":"developer.",
     "description": "I can help you in bringing your projects to life through the creation or redesign of user-friendly and visually appealing web interfaces.",
     "projectTitle":"Projects",
+    "filtertext":"Development",
     "projets":{
       "figy":"FIGY is a mobile app, designed as a final project for the Master's Degree in User Experience by Elisava, in Spain. It's a disruptive platform that offers sustainable products associated with an NFT, guaranteeing their traceability.",
       "groupomania":"Project completed during the web developer training program at Openclassrooms, in France. The Groupomania group's internal social network, allows to create a user account, connect and participate in the company's internal forum.",
@@ -39,6 +39,7 @@
     "cv":{
       "homeText":"Custom theme creation on Wordpress.",
       "resume":"Blog created with wordpress. The project consists of the creation and integration of a custom theme for wordpress, the creation of a database, and its online publishing."
-    }
+    },
+    "download":"download cv"
   }
   

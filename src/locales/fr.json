@@ -1,10 +1,10 @@
 {
   "buttonProfile":"Profil",
-  "hello":"je m'appelle Betsabé, je suis",
   "designerText":"UI UX Designer",
   "devText":"Intégratrice.",
   "description": "Je suis là pour t'accompagner dans la création ou la refonte d'interfaces web et pour t'aider à donner vie à tes projets.",
   "projectTitle":"Projets",
+  "filtertext":"Intégration",
   "about":"À propos",
   "aboutP1":"Je m'appelle Betsabé, mon travail combine expérience utilisateur, conception visuelle et développement frontend.",
   "aboutP2":"Après avoir travaillé pendant plusieurs années en tant qu'architecte, j'ai réorienté ma carrière vers une nouvelle passion : la création de produits numériques.",
@@ -38,6 +38,7 @@
   "cv":{
     "homeText":"Création de thème personnalisé sur Wordpress.",
     "resume":"Blog créé avec wordpress. Le projet consiste en la création et l'intégration d'un thème personnalisé pour wordpress, la création d'une base de données, et sa mise en ligne."
-  }
+  },
+  "download":"télécharger cv"
 }
 

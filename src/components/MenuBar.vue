@@ -10,20 +10,24 @@
       </router-link>
       <div class="right-buttons">
         <LocaleSwitcher />
-        <a
-          class="btn-contact"
-          href="mailto: betsamene@gmail.com"
-          target="_blank"
-          ><span class="underlined-02">CONTACT</span>
-        </a>
         <router-link 
           to="/about" 
           class="btn-profile" 
         >
           <span class="underlined-02">{{ $t("buttonProfile") }}</span>
         </router-link>
+        <a
+          class="btn-contact"
+          href="mailto: betsamene@gmail.com"
+          target="_blank"
+          ><span class="underlined-02">CONTACT</span>
+        </a>
       </div>
 
+
+    </nav>
+
+    <div class="menu-btn-ctn">
       <div
         class="menu-btn"
         :class="[isOpen ? 'active' : '']"
@@ -32,11 +36,14 @@
         <span class="bar"></span>
         <span class="bar"></span>
       </div>
-    </nav>
+    </div>
 
     <nav class="nav-mobile">
-      <router-link to="/" @click="toggleMenu()">
-        <span class="btn-open-menu">Home</span>
+      <router-link to="/" @click="toggleMenu()" class="btn-open-menu">
+        <span >Home</span>
+      </router-link>
+      <router-link to="/about" @click="toggleMenu()" class="btn-open-menu">
+        <span>{{ $t("buttonProfile") }} </span>
       </router-link>
       <a
         class="btn-open-menu"
@@ -45,10 +52,8 @@
         target="_blank"
         ><span>CONTACT</span>
       </a>
-      <router-link to="/about" @click="toggleMenu()">
-        <span class="btn-open-menu">{{ $t("buttonProfile") }} </span>
-      </router-link>
-      <LocaleSwitcher class="languages-mobile" />
+      <LocaleSwitcher class="languages-mobile" 
+      />
     </nav>
   </div>
 </template>
@@ -94,7 +99,7 @@ export default {
       if (this.isOpen && window.innerWidth <= 768) {
         gsap.to(".nav-mobile", {
           opacity: 1,
-          duration: 0.2,
+          duration: 0.1,
           ease: "power3.out",
         });
         gsap.to(".nav-mobile", { display: "flex" });
@@ -120,7 +125,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 30;
+  z-index: 20;
   border-bottom: 0.5px solid transparent;
 }
 nav.scrolled {
@@ -171,15 +176,19 @@ nav.scrolled {
 }
 
 /* burguer menu */
+.menu-btn-ctn{
+  position: fixed;
+  top: 35px;
+  right:40px;  
+  display: none;
+  z-index: 50;
+}
 .menu-btn {
   width: 30px;
   height: 30px;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
-  margin-right: 50px;
-  margin-top: 15px;
-  display: none;
+  cursor: pointer;  
 }
 .menu-btn .bar {
   width: 30px;
@@ -189,8 +198,7 @@ nav.scrolled {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--grey1);
-  transition: all 0.3s ease-in-out;
-  z-index: 50;
+  transition: all 0.3s ease-in-out;  
 }
 .menu-btn .bar:nth-of-type(1) {
   top: calc(50% - 5px);
@@ -218,7 +226,7 @@ nav.scrolled {
   opacity: 0;
   display: none;
   transition: all 0.7s;
-  z-index: 20;
+  z-index: 35;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -231,29 +239,34 @@ nav.scrolled {
   font-size: 25px;
   font-family: "Inter", sans-serif;
   text-transform: uppercase;
-  padding: 15px;
+  padding: 7px;
 }
 .languages-mobile {
-  margin-top: 18px;
+  margin-top: 15px;
 }
+
 @media only screen and (max-width: 768px) {
   .right-buttons {
     display: none;
   }
-  .menu-btn {
+  .menu-btn-ctn {
     display: block;
+  }
+  .menu-btn{
     z-index: 50;
   }
   .btn-home,
   .btn-contact,
   .btn-profile {
     width: 25%;
-    min-width: 115px;
     border: none;
   }
 }
-@media only screen and (max-width: 480px) {
-  
+@media only screen and (max-width: 480px) { 
+  .btn-home{
+    width: 50px;
+    margin-left: 20px;
+  } 
   .btn-home p {
     font-size: 20px;
     color: var(--grey1);
@@ -269,8 +282,8 @@ nav.scrolled {
     width: calc(100% - 40px);
     height: 50%;
   }
-  .menu-btn {
-    margin-right: 40px;
+  .menu-btn-ctn {
+    right: 30px;
   }
   .btn-open-menu {
     font-size: 18px;

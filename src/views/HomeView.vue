@@ -9,55 +9,54 @@
       :btnClickHandler="this.toggleCategory"
       :typeOfProject="this.isDesign"
     />
-
-    <div class="project-content">
-      <transition-group
-        name="list"
-        mode="in-out"
-        @before-enter="beforeEnter"
-        @enter="enter"
-      >
-        <div :id="projet.id" v-for="projet in projetCategory" :key="projet.id">
-          <div class="project-content-container">
-            <div class="project-text">
-              <div class="ctn-number scroll-content">
-                <span class="big-number"> {{ projet.number }} </span>
-              </div>
-              <div class="project-description">
-                <h4 class="scroll-content">{{ projet.title }}</h4>
-                <p class="scroll-content">{{ $t(projet.homeText) }}</p>
-                <ul class="tech-label-container scroll-content">
-                  <li
-                    class="tech-label"
-                    v-for="element in projet.techno"
-                    :key="element"
-                  >
-                    {{ element }}
-                  </li>
-                </ul>
-                <router-link
-                  :to="'work'+ { name: 'single', params: { projetId: projet.id } }"
-                  class="btn-arrow underlined-02 scroll-content"
-                >
-                  <span>decouvrir</span>
-                  <img src="/images/arrow-01.svg" alt="arrow" />
-                </router-link>
-              </div>
+    
+    <transition-group
+      name="list"
+      mode="in-out"
+      @before-enter="beforeEnter"
+      @enter="enter"
+    >
+      <div :id="projet.id" v-for="projet in projetCategory" :key="projet.id">
+        <div class="project-content-container">
+          <div class="project-text">
+            <div class="ctn-number scroll-content">
+              <span class="big-number"> {{ projet.number }} </span>
             </div>
-            <router-link
-              class="img-container"
-              :to="{ name: 'single', params: { projetId: projet.id } }"
-            >
-              <img
-                class="projet-img"
-                :src="projet.coverImage"
-                :alt="projet.alt"
-              />
-            </router-link>
+            <div class="project-description">
+              <h4 class="scroll-content">{{ projet.title }}</h4>
+              <p class="scroll-content">{{ $t(projet.homeText) }}</p>
+              <ul class="tech-label-container scroll-content">
+                <li
+                  class="tech-label"
+                  v-for="element in projet.techno"
+                  :key="element"
+                >
+                  {{ element }}
+                </li>
+              </ul>
+              <router-link
+                :to=" { name: 'single', params: { projetId: projet.id } }"
+                class="btn-arrow underlined-02 scroll-content"
+              >
+                <span>decouvrir</span>
+                <img src="/images/arrow-01.svg" alt="arrow" />
+              </router-link>
+            </div>
           </div>
+          <router-link
+            class="img-container"
+            :to="{ name: 'single', params: { projetId: projet.id } }"
+          >
+            <img
+              class="projet-img"
+              :src="projet.coverImage"
+              :alt="projet.alt"
+            />
+          </router-link>
         </div>
-      </transition-group>
-    </div>
+      </div>
+    </transition-group>
+  
   </section>
 </template>
 
@@ -156,14 +155,12 @@ export default {
 </script>
 
 <style>
-.project-content {
-  margin: 0;
-}
+
 .project-content-container {
   display: grid;
   grid-template-columns: 15% 35% 35% 15%;
   grid-template-rows: 1fr 100px;
-  transition: 1s ease all;
+  transition: 1s ease all; 
 }
 /* Dont delete this */
 .project-text {
@@ -196,6 +193,9 @@ export default {
   font-size: 26px;
   text-transform: uppercase;
 }
+.project-description p{
+  margin: 10px 0 40px;
+}
 /* Projet labels */
 .tech-label-container {
   margin: 10px 0;
@@ -208,14 +208,11 @@ export default {
   font-size: 0.9em;
   font-weight: 500;
   text-align: center;
-  margin: 0 8px 0 0;
+  margin: 0 8px 8px 0;
   list-style: none;
-}
-.tech-label::after {
-  content: "»";
-  display: inline-block;
-  color: var(--grey1);
-  margin-left: 3px;
+  padding: 0 5px;
+  border-radius: 40px;
+  border: var(--linesStyle);
 }
 .btn-arrow {
   display: flex;
@@ -301,8 +298,8 @@ export default {
 @media only screen and (max-width: 768px) {
   .project-content-container {
     grid-template-columns: 10% 1fr 10%;
-    grid-template-rows: 350px 1fr;
-  }
+    grid-template-rows: 350px 1fr 80px;
+  } 
   .big-number {
     font-size: 140px;
     left: -5%;
@@ -320,10 +317,9 @@ export default {
   .img-container {
     grid-column: 1/-1;
   }
-
   .project-content-container {
     grid-template-columns: 1fr;
-    grid-template-rows: 300px 1fr;
+    grid-template-rows: 300px 1fr 50px;
   }
   .ctn-number {
     display: none;
@@ -336,14 +332,8 @@ export default {
   .btn-arrow span {
     font-size: 12px;
   }
-  .project-description {
-    margin: 20px 0 10px;
-  }
   .project-description h4 {
     font-size: 20px;
-  }
-  .project-description p {
-    margin: 16px 0 0;
   }
   .circle1 {
     display: none;

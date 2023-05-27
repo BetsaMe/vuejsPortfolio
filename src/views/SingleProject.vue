@@ -59,21 +59,18 @@
 
       <div class="btn-info-ctn">
         <a
-          class="btn-info underlined-02"
+          class="btn-info underlined-02 btn-arrow"
           :href="singleProject.link"
           target="_blank"
-          >🔎En savoir plus
+          ><img src="/images/arrow-01.svg" alt="arrow" />Projet complet
         </a>
       </div>
     </div>
-    <div class="change-project">
-      <div>
-        <p class="underlined-02" @click="goBack">Previous project</p>
-      </div>
-      <div>
-        <p class="underlined-02" @click="goFoward">Next project</p>
-      </div>
-    </div>
+    <ul class="change-project">
+        <li  @click="goBack"> <span class="underlined-02">Previous project</span> </li>   
+     
+        <li  @click="goFoward"><span class="underlined-02">Next project</span> </li>      
+    </ul>
   </div>
 </template>
 
@@ -147,9 +144,6 @@ export default {
   margin: auto 15%;
   position: relative;
 }
-.text-bloc {
-  padding: 10px 40px;
-}
 .introduction-bloc {
   display: flex;
 }
@@ -158,29 +152,39 @@ export default {
   width: 50%;
   padding: 60px 40px;
 }
-.left-bloc p,
+.left-bloc p{
+  margin: 0 0 35px;
+}
 .left-bloc ul {
   margin: 0;
-}
-.left-bloc h5,
-.right-bloc h5 {
-  margin: 22px 0 7px;
-}
-.right-bloc p,
-.text-bloc p {
-  line-height: 23px;
-}
-.left-bloc ul {
   display: flex;
   padding: 0;
   flex-wrap: wrap;
 }
 .left-bloc li {
-  list-style: none;
-  margin-right: 5px;
+  margin-right: 6px;
 }
+.left-bloc h5,
+.right-bloc h5 {
+  margin: 4px 0;
+}
+.right-bloc p {
+  line-height: 23px;
+  margin: 0;
+}
+/* Project content */
 .bloc-project {
-  margin: 60px 0;
+  margin: 0 0 100px;  
+}
+.text-bloc {
+  padding: 40px ;
+}
+.text-bloc h4 {
+  margin: 4px 0;
+}
+.text-bloc p {
+  margin: 0;
+  line-height: 23px;
 }
 .bloc-project-images {
   width: 100%;
@@ -191,15 +195,14 @@ export default {
 .btn-info-ctn {
   padding: 10px 40px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin-bottom: 30px;
 }
 .btn-info {
   display: inline-block;
-  font-size: 15px;
   font-family: "Montserrat", sans-serif;
+  font-weight: 14px;
   font-weight: 600;
-  color: var(--grey1);
   text-transform: uppercase;
   cursor: pointer;
   margin: 10px;
@@ -212,24 +215,25 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--grey1);
   font-weight: 600;
   text-transform: uppercase;
   position: relative;
-  width: 35%;
-  margin: 0 auto;
+  width: 70%;
+  margin: 50px auto;
+  padding: 0;
 }
-.change-project div:first-child,
-.change-project div:last-child {
+.change-project li:first-child,
+.change-project li:last-child {
   width: 50%;
   cursor: pointer;
-  padding: 0 20px;
+  display: flex;
+  justify-content: center;
 }
-.change-project p {
+.change-project span {
   padding: 5px;
   text-align: center;
   width: fit-content;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 @media only screen and (max-width: 768px) {
@@ -238,18 +242,22 @@ export default {
     width: 80%;
     margin: auto 10%;
   }
-  .introduction-bloc {
+  .introduction-bloc{
+    margin-bottom: 40px;
     flex-direction: column;
   }
   .left-bloc,
-  .right-bloc,
-  .text-bloc {
+  .right-bloc
+  {
     width: 100%;
-    padding: 0 20px;
+    padding: 20px;
   }
-  .head-image-container {
-    margin-top: 65px;
+  .bloc-project {
+    margin: 0 0 70px;  
   }
+  .text-bloc{
+    padding: 30px 20px;
+  } 
   .head-image-mobile {
     display: block;
   }
@@ -265,14 +273,18 @@ export default {
   .content {
     margin: 0;
     width: 100%;
+  }  
+  .bloc-project{
+    margin-bottom: 60px;
   }
-  .text-bloc h4,
-  .introduction-bloc h5 {
-    margin: 12px 0;
+  .introduction-bloc{
+    margin-bottom: 40px;
+  }
+  .text-bloc{
+    padding: 20px;
   }
   .head-image-container {
     height: 300px;
-    margin-top: 55px;
   }
   .head-image {
     height: 300px;
