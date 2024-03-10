@@ -2,25 +2,25 @@
   <div class="ctn-languages">
     <button
       @click="
-        this.$i18n.locale = 'fr';
+        this.$i18n.locale = 'en';
         toggle();
       "
       type="button"
       class="toggle-style"
       :class="{ activeclass: isActive }"
     >
-      FR
+      EN
     </button>
     <button
       @click="
-        this.$i18n.locale = 'en';
+        this.$i18n.locale = 'fr';
         toggle();
       "
       type="button"
       class="toggle-style"
       :class="{ activeclass: !isActive }"
     >
-      EN
+      FR
     </button>
   </div>
 </template>

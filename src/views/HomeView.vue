@@ -35,11 +35,13 @@
                 </li>
               </ul>
               <router-link
-                :to=" { name: 'single', params: { projetId: projet.id } }"
-                class="btn-arrow underlined-02 scroll-content"
+                :to=" { name: 'single', params: { projetId: projet.id } }"                
               >
-                <span>decouvrir</span>
-                <img src="/images/arrow-01.svg" alt="arrow" />
+                <ArrowBtn 
+                  title="Discover" 
+                  class="scroll-content"
+                  arrowPosition="after"
+                />
               </router-link>
             </div>
           </div>
@@ -66,12 +68,14 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import data from "../data";
 import FilterComponent from "@/components/FilterComponent.vue";
+import ArrowBtn from "@/components/ArrowBtn.vue";
 
 export default {
   name: "HomeView",
   components: {
     HeroSection,
     FilterComponent,
+    ArrowBtn
   },
   data() {
     return {
@@ -214,24 +218,7 @@ export default {
   border-radius: 40px;
   border: var(--linesStyle);
 }
-.btn-arrow {
-  display: flex;
-  align-items: center;
-  width: fit-content;
-}
-.btn-arrow span {
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 600;
-  margin-right: 8px;
-}
-.btn-arrow img {
-  height: 30px;
-  width: 30px;
-}
-.btn-arrow:hover {
-  background-size: 100% 2px;
-}
+
 .img-container {
   grid-column: 3/4;
   grid-row: 1/2;
@@ -328,9 +315,6 @@ export default {
     height: 300px;
     border: none;
     border-bottom: var(--linesStyle);
-  }
-  .btn-arrow span {
-    font-size: 12px;
   }
   .project-description h4 {
     font-size: 20px;

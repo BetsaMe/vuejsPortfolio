@@ -1,35 +1,33 @@
 <template>
   <div>
     <nav class="nav-desktop">
-      <router-link to="/" class="btn-home">
-        <p class="logo-mobile">BM</p>
-        <p class="logo-desktop">
+      <router-link to="/" class="btn-name">
+        <span class="logo-mobile">BM</span>
+        <span class="logo-desktop">
           Betsabé <br />
           Meneses
-        </p>
+        </span>
       </router-link>
       <div class="right-buttons">
         <LocaleSwitcher />
         <router-link 
           to="/about" 
-          class="btn-profile" 
+          class="btn-secondary" 
         >
           <span class="underlined-02">{{ $t("buttonProfile") }}</span>
         </router-link>
-        <a
-          class="btn-contact"
-          href="mailto: betsamene@gmail.com"
-          target="_blank"
-          ><span class="underlined-02">CONTACT</span>
-        </a>
+        <router-link 
+          to="/contact"
+          class="btn-secondary"  
+        >
+          <span class="underlined-02">CONTACT</span>
+        </router-link>
       </div>
-
-
     </nav>
 
-    <div class="menu-btn-ctn">
+    <div class="btn-burguer-ctn">
       <div
-        class="menu-btn"
+        class="btn-burguer"
         :class="[isOpen ? 'active' : '']"
         @click="toggleMenu()"
       >
@@ -39,19 +37,19 @@
     </div>
 
     <nav class="nav-mobile">
-      <router-link to="/" @click="toggleMenu()" class="btn-open-menu">
-        <span >Home</span>
+      <router-link to="/" @click="toggleMenu()" class="btn-nav-mobile">
+        Home
       </router-link>
-      <router-link to="/about" @click="toggleMenu()" class="btn-open-menu">
-        <span>{{ $t("buttonProfile") }} </span>
+      <router-link to="/about" @click="toggleMenu()" class="btn-nav-mobile">
+       {{ $t("buttonProfile") }} 
       </router-link>
-      <a
-        class="btn-open-menu"
-        @click="toggleMenu()"
-        href="mailto: betsamene@gmail.com"
-        target="_blank"
-        ><span>CONTACT</span>
-      </a>
+      <router-link 
+          to="/contact"
+          class="btn-nav-mobile"
+          @click="toggleMenu()"  
+        >
+          CONTACT
+      </router-link>
       <LocaleSwitcher class="languages-mobile" 
       />
     </nav>
@@ -75,6 +73,7 @@ export default {
     window.addEventListener("scroll", this.showingNavbar);
     window.addEventListener("resize", this.openMenu);
   },
+  
   mounted() {
     gsap.to(".nav-desktop", { opacity: 1, duration: 0.5, ease: "power3.out" });
   },
@@ -84,13 +83,25 @@ export default {
   },
   methods: {
     showingNavbar() {
-      let navbar = document.querySelector(".nav-desktop");
-      if (window.pageYOffset > 0) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
+      let navbar = document.querySelector(".nav-desktop")
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 0) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
     },
+      // showingNavbar() {
+      //   const navbar = document.querySelector(".nav-desktop");
+      //   if (window.scrollY > 0 && !this.isOpen) {
+      //     navbar.classList.add("scrolled");
+      //   } else {
+      //     navbar.classList.remove("scrolled");
+      //   }
+      // },
+
     toggleMenu() {
       this.isOpen = !this.isOpen;
       this.openMenu();
@@ -132,40 +143,37 @@ nav.scrolled {
   background: var(--white-bg);
   border-bottom: var(--linesStyle);
 }
-.btn-home {
+.btn-name {
   width: 15%;
+}
+.btn-name span {
+  line-height: 17px;
+  font-size: 18px;
+  padding: 2px;
+  font-weight: 600;
 }
 .right-buttons {
   display: flex;
   width: 35%;
 }
-.btn-profile,
-.btn-home,
-.btn-contact {
+.btn-secondary,
+.btn-name {
   height: 85px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.5s ease;
 }
-.btn-contact,
-.btn-profile {
+.btn-secondary {
   width: 33%;
 }
-.btn-home p {
-  line-height: 17px;
-  font-size: 18px;
-  padding: 2px;
-  font-weight: 600;
-}
-.btn-profile span,
-.btn-contact span {
+.btn-secondary span {
   text-transform: uppercase;
   font-size: 15px;
   padding: 5px 8px;
   font-weight: 600;
 }
-.btn-profile:hover {
+.btn-secondary:hover {
   background-size: 100% 2px;
 }
 .nav-desktop {
@@ -176,21 +184,21 @@ nav.scrolled {
 }
 
 /* burguer menu */
-.menu-btn-ctn{
+.btn-burguer-ctn{
   position: fixed;
   top: 35px;
   right:40px;  
   display: none;
   z-index: 50;
 }
-.menu-btn {
+.btn-burguer {
   width: 30px;
   height: 30px;
   position: relative;
   overflow: hidden;
   cursor: pointer;  
 }
-.menu-btn .bar {
+.btn-burguer .bar {
   width: 30px;
   height: 2px;
   position: absolute;
@@ -200,17 +208,17 @@ nav.scrolled {
   background-color: var(--grey1);
   transition: all 0.3s ease-in-out;  
 }
-.menu-btn .bar:nth-of-type(1) {
+.btn-burguer .bar:nth-of-type(1) {
   top: calc(50% - 5px);
 }
-.menu-btn .bar:nth-of-type(2) {
+.btn-burguer .bar:nth-of-type(2) {
   top: calc(50% + 5px);
 }
-.menu-btn.active .bar:nth-of-type(1) {
+.btn-burguer.active .bar:nth-of-type(1) {
   top: 50%;
   transform: translate(-50%, 0%) rotate(45deg);
 }
-.menu-btn.active .bar:nth-of-type(2) {
+.btn-burguer.active .bar:nth-of-type(2) {
   top: 50%;
   transform: translate(-50%, 0%) rotate(-45deg);
 }
@@ -235,12 +243,13 @@ nav.scrolled {
 .nav-mobile.active {
   opacity: 1;
 }
-.btn-open-menu {
+.btn-nav-mobile{
   font-size: 25px;
   font-family: "Inter", sans-serif;
   text-transform: uppercase;
-  padding: 7px;
+  margin-bottom: 10px;
 }
+
 .languages-mobile {
   margin-top: 15px;
 }
@@ -249,25 +258,24 @@ nav.scrolled {
   .right-buttons {
     display: none;
   }
-  .menu-btn-ctn {
+  .btn-burguer-ctn {
     display: block;
   }
-  .menu-btn{
+  .btn-burguer{
     z-index: 50;
   }
-  .btn-home,
-  .btn-contact,
-  .btn-profile {
+  .btn-name,
+  .btn-secondary {
     width: 25%;
     border: none;
   }
 }
 @media only screen and (max-width: 480px) { 
-  .btn-home{
+  .btn-name{
     width: 50px;
     margin-left: 20px;
   } 
-  .btn-home p {
+  .btn-name p {
     font-size: 20px;
     color: var(--grey1);
     margin-top: 30px;
@@ -282,10 +290,10 @@ nav.scrolled {
     width: calc(100% - 40px);
     height: 50%;
   }
-  .menu-btn-ctn {
+  .btn-burguer-ctn {
     right: 30px;
   }
-  .btn-open-menu {
+  .btn-nav-mobile {
     font-size: 18px;
   }
 }

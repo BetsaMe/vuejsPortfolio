@@ -1,11 +1,9 @@
 <template>
   <a
-    href="images/CV-Betsa-2022.pdf"
-    download="CV-Betsa-2022"
-    class="btn-download"
+    class="btn-arrow-dynamic"
   >
     <img src="/images/arrow-01.svg" alt="arrow" class="icon-arrow before" />
-    <span class="label">{{ $t("download") }}</span>
+    <span class="label">{{ title }}</span>
     <img src="/images/whitearrow-01.svg" alt="arrow" class="icon-arrow after" />
   </a>
 </template>
@@ -13,11 +11,12 @@
 <script>
 export default {
   name: "DownloadBtn",
+  props:["title"]
 };
 </script>
 
 <style scoped>
-.btn-download {
+.btn-arrow-dynamic {
   display: inline-block;
   font-size: 15px;
   line-height: 24px;
@@ -34,7 +33,7 @@ export default {
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1),
     color 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.btn-download .label {
+.btn-arrow-dynamic .label {
   display: inline-block;
   transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1);
 }
@@ -60,30 +59,30 @@ export default {
   transform: translateX(75%) scaleX(0.1);
   transform-origin: right center;
 }
-.btn-download:hover .label {
+.btn-arrow-dynamic:hover .label {
   transform: translateX(-40px);
 }
-.btn-download:hover .icon-arrow.before {
+.btn-arrow-dynamic:hover .icon-arrow.before {
   opacity: 0;
   transform: translateX(-75%) scaleX(0.1);
 }
-.btn-download:hover .icon-arrow.after {
+.btn-arrow-dynamic:hover .icon-arrow.after {
   opacity: 1;
   transform: translateX(0) scaleX(1);
 }
-.btn-download:hover,
-.btn-download:focus {
+.btn-arrow-dynamic:hover,
+.btn-arrow-dynamic:focus {
   background: var(--black);
   color: var(--white-bg);
 }
 
 @media screen and (max-width: 1024px) {
-  .btn-download {
+  .btn-arrow-dynamic {
     min-width: 250px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .btn-download {
+  .btn-arrow-dynamic {
     margin: 20px 0;
   }
 }

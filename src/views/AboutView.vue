@@ -11,7 +11,11 @@
               <p class="anim-2">{{ $t("aboutP3") }}</p>
               <p class="anim-2">{{ $t("aboutP4") }}</p>
               <div class="ctn-btn-download anim-2">
-                  <DownloadBtn />  
+                  <DownloadBtn 
+                    href="images/CV-Betsa-2022.pdf"
+                    download="CV-Betsa-2022"
+                    title="Download cv"
+                  />  
               </div>
             </div>
             <div class="profile-photo-ctn">
@@ -116,6 +120,9 @@ export default {
   .about-text {
     width: 100%;
   }
+  .about-text > h4{
+    font-size: 8vw;
+}
   .profile-photo {
     margin: auto;
     padding: 0;
@@ -148,7 +155,7 @@ export default {
     height: 350px;
   }
   .about-text > h4{
-    font-size: 65px;
+    font-size: 12vw;
   }
 }
 </style>

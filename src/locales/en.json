@@ -1,7 +1,7 @@
 {
     "buttonProfile":"Profile",
-    "designerText":"UI UX Designer",
-    "devText":"developer.",
+    "designerText":"Ux Ui Designer",
+    "devText":"Developer",
     "description": "I can help you in bringing your projects to life through the creation or redesign of user-friendly and visually appealing web interfaces.",
     "projectTitle":"Projects",
     "filtertext":"Development",
@@ -35,6 +35,10 @@
     "hot":{
       "homeText":"Creation of an API for a hot sauce web application",
       "resume":"Creation of an API for a web application where users can recommend their favorite hot sauces and rate other users' choices.."
+    },
+    "csm":{
+      "homeText":"Web integration challenge, created by the frontend practice website.",
+      "resume":"Web integration challenge, created by the frontend practice website. The exercise consisted of recreating the homepage of Canal Street Market, taking into account the graphic style, colors, typography, animations, etc. The mockup is also responsive."
     },
     "cv":{
       "homeText":"Custom theme creation on Wordpress.",

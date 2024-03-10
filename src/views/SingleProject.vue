@@ -44,7 +44,7 @@
       <div
         v-for="single in singleProject.infoByProject"
         :key="single.id"
-        class="bloc-project"
+        class="project-paragraph"
       >
         <div class="text-bloc">
           <h4>{{ single.title }}</h4>
@@ -53,31 +53,43 @@
         <img
           :src="single.img"
           :alt="singleProject.alt"
-          class="bloc-project-images"
+          class="project-paragraph-images"
         />
       </div>
 
       <div class="btn-info-ctn">
-        <a
-          class="btn-info underlined-02 btn-arrow"
+        <DownloadBtn 
+          title="Learn more"
           :href="singleProject.link"
           target="_blank"
-          ><img src="/images/arrow-01.svg" alt="arrow" />Projet complet
-        </a>
+        />
       </div>
     </div>
     <ul class="change-project">
-        <li  @click="goBack"> <span class="underlined-02">Previous project</span> </li>   
+        
+        <li  @click="goBack"> 
+            <ArrowBtn title="Previous" arrowPosition="before">
+            </ArrowBtn>
+        </li>   
      
-        <li  @click="goFoward"><span class="underlined-02">Next project</span> </li>      
+        <li  @click="goFoward">
+          <ArrowBtn title="Next" arrowPosition="after">
+          </ArrowBtn>
+        </li>      
     </ul>
   </div>
 </template>
 
 <script>
-import data from "../data";
+import data from "../data.js"
+import DownloadBtn from "@/components/DownloadBtn.vue";
+import ArrowBtn from "@/components/ArrowBtn.vue";
 export default {
   name: "SingleProject",
+  components:{
+        DownloadBtn,
+        ArrowBtn
+  },
   data() {
     return {
       projets: data,
@@ -173,8 +185,8 @@ export default {
   margin: 0;
 }
 /* Project content */
-.bloc-project {
-  margin: 0 0 100px;  
+.project-paragraph {
+  margin: 0 0 100px; 
 }
 .text-bloc {
   padding: 40px ;
@@ -186,40 +198,29 @@ export default {
   margin: 0;
   line-height: 23px;
 }
-.bloc-project-images {
+.project-paragraph-images {
   width: 100%;
   object-fit: contain;
   position: relative;
   padding: 0 1px;
 }
 .btn-info-ctn {
-  padding: 10px 40px;
   display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
-}
-.btn-info {
-  display: inline-block;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  cursor: pointer;
+  justify-content:flex-end; 
   margin: 10px;
-  padding: 5px 0;
 }
+
 .head-image-mobile {
   display: none;
 }
 .change-project {
   display: flex;
   justify-content: center;
-  align-items: center;
+  width: 33%;
   font-weight: 600;
   text-transform: uppercase;
   position: relative;
-  width: 70%;
-  margin: 50px auto;
+  margin: 80px auto ;
   padding: 0;
 }
 .change-project li:first-child,
@@ -227,13 +228,12 @@ export default {
   width: 50%;
   cursor: pointer;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 .change-project span {
   padding: 5px;
   text-align: center;
   width: fit-content;
-  /* margin: 0 auto; */
 }
 
 @media only screen and (max-width: 768px) {
@@ -252,7 +252,7 @@ export default {
     width: 100%;
     padding: 20px;
   }
-  .bloc-project {
+  .project-paragraph {
     margin: 0 0 70px;  
   }
   .text-bloc{
@@ -274,7 +274,7 @@ export default {
     margin: 0;
     width: 100%;
   }  
-  .bloc-project{
+  .project-paragraph{
     margin-bottom: 60px;
   }
   .introduction-bloc{

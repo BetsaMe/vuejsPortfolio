@@ -17,6 +17,11 @@ const routes = [
     component: () => import('@/views/SingleProject.vue'),
   },
   {
+    path: '/contact',
+    name: 'contact',
+    component: () => import('@/views/ContactView.vue'),
+  },
+  {
     path: '/404', name: 'ErrorPage', component: () => import('@/views/ErrorPage.vue')
   },
   {
