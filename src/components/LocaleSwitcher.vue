@@ -1,27 +1,10 @@
 <template>
-  <div class="ctn-languages">
-    <button
-      @click="
-        this.$i18n.locale = 'en';
-        toggle();
-      "
-      type="button"
-      class="toggle-style"
-      :class="{ activeclass: isActive }"
-    >
-      EN
-    </button>
-    <button
-      @click="
-        this.$i18n.locale = 'fr';
-        toggle();
-      "
-      type="button"
-      class="toggle-style"
-      :class="{ activeclass: !isActive }"
-    >
-      FR
-    </button>
+  <div class="ctn-languages">   
+      <select aria-label="language selection" v-model="$i18n.locale" class="language-select">
+        <option value="es">ES</option>
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+      </select>
   </div>
 </template>
 
@@ -30,15 +13,9 @@ export default {
   name: "LocaleSwitcher",
   data() {
     return {
-      locales: ["en", "fr"],
-      isActive: true,
+      locales: ["es","en", "fr"]
     };
-  },
-  methods: {
-    toggle() {
-      this.isActive = !this.isActive;
-    },
-  },
+  }
 };
 </script>
 
@@ -48,19 +25,20 @@ export default {
   justify-content: center;
   width: 35%;
 }
-.ctn-languages button {
-  background-color: transparent;
-  border: none;
-  width: 40px;
+select {
+  border: 0;
+  outline: 0;
+  background: none;
+  color: inherit;
+  box-shadow: none;
   cursor: pointer;
+  padding: 0.8em;
+  font-size: 15px;
 }
-.activeclass {
-  text-decoration: underline 1.5px var(--pink) wavy;
-  font-weight: bold;
+.language-select {
+  text-decoration: underline 1.2px var(--pink);
 }
-.toggle-style {
-  color: var(--grey2)
-}
+
 @media only screen and (max-width: 768px) {
   .toggle-style {
     font-size: 16px;

@@ -1,6 +1,6 @@
 <template>
   <section id="contact-form">
-    <h3 class="box">Get in touch</h3>
+    <h3 class="box">{{ $t("contactTitle") }}</h3>
     <form
       id="form"
       name="simple-contact-form"

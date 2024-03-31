@@ -297,5 +297,8 @@ export default {
   .change-project p {
     font-size: 13px;
   }
+  .btn-info-ctn {
+    justify-content:center; 
+  }
 }
 </style>

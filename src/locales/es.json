@@ -1,0 +1,45 @@
+{
+    "buttonProfile":"Sobre mí",
+    "buttonContact": "contacto",
+    "designerText":"Diseño Ux Ui",
+    "devText":"Desarrollo web.",
+    "description": "Mi enfoque principal es ayudarte a hacer realidad tus proyectos digitales. Me especializo en la creación o rediseño de aplicaciones y sitios web que sean funcionales y atractivos para tus usuarios.",
+    "projectTitle":"Proyectos",
+    "filtertext":"Development",
+    "about":"Sobre mí",
+    "aboutP1":"Hola, soy Betsabé. Mi trabajo combina la experiencia de usuario, el diseño visual y el desarrollo frontend.",
+    "aboutP2":"Arquitecta de profesión, en los últimos años he explorado y cultivado mi nueva pasión: el diseño de productos digitales. Al igual que en la arquitectura, mi interés se centra en crear productos que no solo sean visualmente atractivos, sino también útiles y que, de alguna manera, contribuyan a mejorar la vida de las personas.",
+    "aboutP3":"Mi experiencia en el campo del diseño me ha proporcionado una sensibilidad hacia los detalles visuales y una profunda curiosidad por los aspectos técnicos. Es por eso que, además de enfocarme en la parte visual, disfruto comprender los aspectos técnicos de los proyectos en los que trabajo. Esta habilidad me ha permitido mejorar mi comunicación con profesionales de diversas áreas.",
+    "aboutP4":" Actualmente, compagino mi labor como arquitecta con proyectos de diseño web en modo freelance, sin embargo, mi deseo es enfocarme completamente en el diseño y desarrollo digital. Por esta razón, estoy buscando colaboraciones y nuevas oportunidades laborales.",
+    "happy":{
+      "homeText":"Design thinking como una herramienta para resolver los problemas actuales.",
+      "resume":"HappyLife es un proyecto que tiene como objetivo encontrar una solución al problema del aislamiento social, utilizando herramientas del design thinking."
+    },
+    "figy":{
+      "homeText":"Diseño de un marketplace para la venta de productos phygitales y ecológicos",
+      "resume":"FIGY es una aplicación móvil, diseñada como proyecto final para el Máster en Experiencia de Usuario de Elisava, en España. Es una plataforma disruptiva que ofrece productos sostenibles asociados a un NFT, garantizando su trazabilidad."
+    },
+    "wand":{
+      "homeText":"Diseño de una aplicación domótica para controlar los dispositivos conectados del hogar.",
+      "resume":"Este proyecto consistió en el diseño UI y UX de una aplicación para viviendas inteligentes. Incluyó investigación con usuarios, pruebas de usabilidad, diseño de arquitectura web, prototipos y diseño final de la interfaz. Este trabajo se llevó a cabo en un período de 4 meses durante el Máster en Diseño de Experiencia de la escuela ELISAVA."
+    },
+    "groupomania":{
+      "homeText":"Creación de una red social corporativa para mejorar la satisfacción de los empleados.",
+      "resume":"Proyecto completado durante el programa de formación de desarrollo web en Openclassrooms, en Francia. La red social interna del grupo Groupomania permite crear una cuenta de usuario, conectarse y participar en el foro interno de la empresa."
+    },
+    "hot":{
+      "homeText":"Creación de una API para una aplicación web que permite valorar salsas picantes.",
+      "resume":"Desarrollo de una interfaz de programación de aplicaciones (API) para una aplicación web que permite a los usuarios recomendar sus salsas picantes preferidas y evaluar las selecciones de otros usuarios."
+    },
+    "csm":{
+      "homeText":"Desafío de integración web, creado por el sitio web de práctica de frontend.",
+      "resume":"Desafío de integración web, creado por el sitio web de práctica de frontend. El ejercicio consistió en recrear la página de inicio de Canal Street Market, teniendo en cuenta el estilo gráfico, colores, tipografía, animaciones, etc. El diseño también es responsivo."
+    },
+    "cv":{
+      "homeText":"Creación de un tema personalizado en Wordpress.",
+      "resume":"Blog creado con WordPress. El proyecto consiste en la creación e integración de un tema personalizado para WordPress, la creación de una base de datos y su publicación."
+    },
+    "download":"Descargar cv",
+    "contactTitle":"Contáctame"
+  }
+  

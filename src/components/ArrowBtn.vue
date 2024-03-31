@@ -4,7 +4,7 @@
   >
     <img src="/images/arrow-left.svg" alt="arrow" :class="{ 'before-arrow': arrowPosition === 'after' }"/>
     <span>{{title}}</span>
-    <img src="/images/arrow-01.svg" alt="arrow" :class="{ 'after-arrow': arrowPosition === 'before' }"/>
+    <img src="/images/arrow-right.svg" alt="arrow" :class="{ 'after-arrow': arrowPosition === 'before' }"/>
   </a>
 </template>
 

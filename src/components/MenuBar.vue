@@ -20,7 +20,7 @@
           to="/contact"
           class="btn-secondary"  
         >
-          <span class="underlined-02">CONTACT</span>
+          <span class="underlined-02">{{ $t("buttonContact") }}</span>
         </router-link>
       </div>
     </nav>
@@ -137,6 +137,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 20;
+  height: 85px;
   border-bottom: 0.5px solid transparent;
 }
 nav.scrolled {
@@ -158,7 +159,6 @@ nav.scrolled {
 }
 .btn-secondary,
 .btn-name {
-  height: 85px;
   display: flex;
   justify-content: center;
   align-items: center;

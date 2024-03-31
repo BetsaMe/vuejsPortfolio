@@ -1,5 +1,6 @@
 {
   "buttonProfile":"Profil",
+  "buttonContact": "contact",
   "designerText":"Ux Ui Designer",
   "devText":"Intégratrice.",
   "description": "Je suis là pour t'accompagner dans la création ou la refonte d'interfaces web et pour t'aider à donner vie à tes projets.",
@@ -39,6 +40,7 @@
     "homeText":"Création de thème personnalisé sur Wordpress.",
     "resume":"Blog créé avec wordpress. Le projet consiste en la création et l'intégration d'un thème personnalisé pour wordpress, la création d'une base de données, et sa mise en ligne."
   },
-  "download":"télécharger cv"
+  "download":"télécharger cv",
+  "contactTitle":"Contacte-moi !"
 }
 

@@ -1,16 +1,11 @@
 {
     "buttonProfile":"Profile",
+    "buttonContact": "contact",
     "designerText":"Ux Ui Designer",
-    "devText":"Developer",
+    "devText":"Developer.",
     "description": "I can help you in bringing your projects to life through the creation or redesign of user-friendly and visually appealing web interfaces.",
     "projectTitle":"Projects",
     "filtertext":"Development",
-    "projets":{
-      "figy":"FIGY is a mobile app, designed as a final project for the Master's Degree in User Experience by Elisava, in Spain. It's a disruptive platform that offers sustainable products associated with an NFT, guaranteeing their traceability.",
-      "groupomania":"Project completed during the web developer training program at Openclassrooms, in France. The Groupomania group's internal social network, allows to create a user account, connect and participate in the company's internal forum.",
-      "wand":"This project consisted of research, architecture, UX writing, and design of a smart home app for the Master's Degree in Experience Design by ELISAVA.",
-      "hot":"Creation of an API for a web application where users can recommend their favorite hot sauces and rate other users' choices."
-    },
     "about":"About",
     "aboutP1":"Hi I'm Betsabé, my work combines user experience, visual design, and frontend development.",
     "aboutP2":"After working as an architect for several years, I've shifted my focus to creating digital products. I'm passionate about web design, user-centric experiences and creating products that improve people's lives.",
@@ -44,6 +39,7 @@
       "homeText":"Custom theme creation on Wordpress.",
       "resume":"Blog created with wordpress. The project consists of the creation and integration of a custom theme for wordpress, the creation of a database, and its online publishing."
     },
-    "download":"download cv"
+    "download":"download cv",
+    "contactTitle":"Get in touch!"
   }
   

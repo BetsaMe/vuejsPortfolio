@@ -2,7 +2,7 @@
   <a
     class="btn-arrow-dynamic"
   >
-    <img src="/images/arrow-01.svg" alt="arrow" class="icon-arrow before" />
+    <img src="/images/arrow-right.svg" alt="arrow" class="icon-arrow before" />
     <span class="label">{{ title }}</span>
     <img src="/images/whitearrow-01.svg" alt="arrow" class="icon-arrow after" />
   </a>

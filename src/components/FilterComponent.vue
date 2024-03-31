@@ -98,7 +98,7 @@ export default {
   padding: 5px 0;
 }
 .arrow {
-  content: url("/public/images/arrow-01.svg");
+  content: url("/public/images/arrow-right.svg");
   height: 28px;
   width: 28px;
   transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1),
