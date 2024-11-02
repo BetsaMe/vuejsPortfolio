@@ -42,9 +42,35 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200;0,7..72,300;1,7..72,200;1,7..72,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&family=Overpass:wght@100;200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
+@font-face {
+    font-family: 'pp_eiko_italiclight';
+    src: url('./fonts/eiko-font/ppeiko-lightitalic-webfont.woff2') format('woff2'),
+         url('./fonts/eiko-font/ppeiko-lightitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'pp_eikomedium';
+    src: url('./fonts/eiko-font/ppeiko-medium-webfont.woff2') format('woff2'),
+         url('./fonts/eiko-font/ppeiko-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+} 
+
+@font-face {
+    font-family: 'pp_eikothin';
+    src: url('./fonts/eiko-font/ppeiko-thin-webfont.woff2') format('woff2'),
+         url('./fonts/eiko-font/ppeiko-thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 :root {
   --black: #212121;
@@ -69,6 +95,7 @@ html {
 body {
   height: 100%;
   font-family: "Montserrat", sans-serif;
+  font-weight: 400;
   background-color: var(--white-bg);
   margin: 0;
   padding: 0;

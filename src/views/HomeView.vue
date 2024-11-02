@@ -183,9 +183,9 @@ export default {
   position: relative;
   font-size: 170px;
   line-height: 170px;
-  font-family: "Inter", sans-serif;
-  font-weight: 200;
-  left: -60px;
+  font-family: "pp_eikothin", sans-serif;
+  left: -50px;
+  color: #b6b6b6;
 }
 .project-description {
   padding: 20px 50px;
@@ -194,7 +194,7 @@ export default {
 }
 .project-description h4 {
   margin: 0;
-  font-size: 26px;
+  font-size: 24px;
   text-transform: uppercase;
 }
 .project-description p{
@@ -229,7 +229,7 @@ export default {
   height: 100%;
   width: calc(100% - 11px);
   left: 10px;
-  cursor: url("/public/images/arrow-02.png"), auto;
+  cursor: url("/public/images/black-circle.svg"), auto;
 }
 /* Gradients */
 .circle-container {

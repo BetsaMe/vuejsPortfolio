@@ -31,11 +31,13 @@
             >
               {{ single }}
             </li>
-          </ul>
+          </ul>     
+               
         </div>
         <div class="right-bloc">
           <h5>Brief</h5>
           <p>{{ $t(singleProject.resume) }}</p>
+          <a class="partner-style" v-if="singleProject.partner" :href="singleProject.partner" target="_blank">Andrea Galindo</a>
         </div>
       </div>
     </div>
@@ -59,7 +61,7 @@
 
       <div class="btn-info-ctn">
         <DownloadBtn 
-          title="Learn more"
+          :title="singleProject.lastButton"
           :href="singleProject.link"
           target="_blank"
         />
@@ -187,9 +189,11 @@ export default {
 /* Project content */
 .project-paragraph {
   margin: 0 0 100px; 
+  
 }
 .text-bloc {
   padding: 40px ;
+  width: 50%;
 }
 .text-bloc h4 {
   margin: 4px 0;
@@ -234,6 +238,11 @@ export default {
   padding: 5px;
   text-align: center;
   width: fit-content;
+}
+.partner-style{
+  font-weight: 500;
+  text-decoration: underline;
+
 }
 
 @media only screen and (max-width: 768px) {

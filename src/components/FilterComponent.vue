@@ -63,7 +63,7 @@ export default {
   align-items: flex-end;
   justify-content: space-between;
   margin: 0 15% 50px;
-  padding: 30px 40px;
+  padding: 30px 20px;
 }
 
 .project-selection h3 {
@@ -92,10 +92,9 @@ export default {
   justify-content: flex-end;
 }
 .btn-filter .text {
-  font-weight: 500;
-  font-size: 18px;
+  font-weight: normal;
+  font-size: 20px;
   width: max-content;
-  padding: 5px 0;
 }
 .arrow {
   content: url("/public/images/arrow-right.svg");
@@ -114,7 +113,7 @@ export default {
   transform: translateX(0) scaleX(1);
 }
 .btn-filter .selected-tab {
-  font-weight: 600;
+  font-weight:600;
   background-position: 100% 100%;
   background-size: 50% 2px;
 }

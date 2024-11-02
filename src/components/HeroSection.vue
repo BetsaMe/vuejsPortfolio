@@ -3,7 +3,8 @@
     <div class="center-bloc">
       <h1 class="fade-in">{{ $t("designerText") }}</h1>
       <h2 class="fade-in second-line">& {{ $t("devText") }}</h2>
-      <p class="fade-in description">{{ $t("description") }}<span>🎨👩🏽‍💻✨💫</span></p>
+      <p class="fade-in description">{{ $t("description") }}</p>
+      <span class="fade-in">🎨👩🏽‍💻✨💫</span>
     </div>
   </section>
 </template>
@@ -21,7 +22,7 @@ export default {
       tl.to(".fade-in", {
         stagger: 0.15,
         opacity: 1,
-        duration: 1,
+        duration: 0.85,
         y: 0,
         ease: "Power1.easeOut"
       })
@@ -47,9 +48,9 @@ export default {
   position: relative;
 }
 .center-bloc {
-  margin: 0 15%;
+  margin: 0 auto;
   width: 70%;
-  padding: 135px 40px;
+  padding: 135px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,12 +59,12 @@ h1,
 h2,
 .second-line,
 h3 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 200;
+  font-family: 'pp_eikothin', sans-serif;
+  font-weight: normal;
 }
 h1,
 .second-line {
-  font-size: 8vw;
+  font-size: 9vw;
   letter-spacing: -0.02em;
   line-height: 100%;
   margin: 0;

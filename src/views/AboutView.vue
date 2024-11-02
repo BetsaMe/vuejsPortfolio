@@ -10,10 +10,11 @@
               <p class="anim-2">{{ $t("aboutP2") }}</p>
               <p class="anim-2">{{ $t("aboutP3") }}</p>
               <p class="anim-2">{{ $t("aboutP4") }}</p>
+              <a href="images/CVBetsabeMeneses.pdf" download="CV-Betsa">Download CV</a>
               <div class="ctn-btn-download anim-2">
                   <DownloadBtn 
-                    href="images/CV-Betsa-2022.pdf"
-                    download="CV-Betsa-2022"
+                    href="images/CV-Betsa-Meneses.pdf"
+                    download="CV-Betsa"
                     title="Download cv"
                   />  
               </div>
@@ -75,7 +76,7 @@ export default {
   line-height: 24px;
 }
 .about-text > h4{
-  font-family: 'Inter', sans-serif;
+  font-family: 'pp_eikothin', sans-serif;
   font-weight: 200;
   font-size: 5vw;
   line-height: 100%;

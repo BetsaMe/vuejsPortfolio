@@ -39,6 +39,10 @@
       "homeText":"Custom theme creation on Wordpress.",
       "resume":"Blog created with wordpress. The project consists of the creation and integration of a custom theme for wordpress, the creation of a database, and its online publishing."
     },
+    "coa":{
+      "homeText":"Custom website development",
+      "resume":"Website created with WordPress and Elementor Pro. It consists of building a manageable website for a new brand of protein chocolates. Design by:"
+    },
     "download":"download cv",
     "contactTitle":"Get in touch!"
   }

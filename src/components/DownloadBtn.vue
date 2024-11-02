@@ -1,6 +1,8 @@
 <template>
   <a
     class="btn-arrow-dynamic"
+    :href="href"
+    :download="download"
   >
     <img src="/images/arrow-right.svg" alt="arrow" class="icon-arrow before" />
     <span class="label">{{ title }}</span>
@@ -11,7 +13,20 @@
 <script>
 export default {
   name: "DownloadBtn",
-  props:["title"]
+  props: {
+    href: {
+      type: String,
+      required: true
+    },
+    download: {
+      type: String,
+      required: true
+    },
+    title: {
+      type: String,
+      required: true
+    }
+  }
 };
 </script>
 

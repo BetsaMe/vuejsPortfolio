@@ -35,15 +35,11 @@
     </form>
     <div class="infos-contact">
       <div class="infos-child box">
-        <h5>phone</h5>
-        <p>+34658267250</p>
-      </div>
-      <div class="infos-child box">
         <h5>email</h5>
         <p>betsamene@gmail.com</p>
       </div>
       <div class="infos-child box">
-        <h5>location</h5>
+        <h5>current location</h5>
         <p>Madrid - Spain</p>
       </div>
     </div>
@@ -125,7 +121,7 @@ export default {
   
 }
 #contact-form > h3 {
-  font-family: "Inter", sans-serif;
+  font-family: "pp_eikothin", sans-serif;
   font-weight: 200;
   font-size: 5vw;
   line-height: 100%;
@@ -226,6 +222,11 @@ fieldset {
     width: 80%;
     margin: 0 10%;
     flex-direction: column;
+    padding: 130px 0 0px;
+  }
+  #contact-form > h3{
+    padding: 25px;
+    margin: 0;
   }
   #form,
   .infos-contact {
@@ -237,24 +238,22 @@ fieldset {
 
 }
 @media only screen and (max-width: 480px) {
+  #form{
+  padding: 20px;
+}
   #contact-form {
-    width: 90%;
-    margin: 0 5%;
-  }
-  #form-inputs {
-    padding: 20px;
-    border: var(--linesStyle);
-  }
+    width: 100%;
+    margin: 0 auto;
+  } 
   .infos-contact{
-    padding: 20px;
+    padding: 0 20px;
     margin-top: 50px;
   }
   .btn-submit {
     width: 100%;
   }
   #contact-form > h3{
-    font-size: 12vw ;
-    margin-left: 0;
+    font-size: 48px ;
   }
 }
 </style>

@@ -1,9 +1,9 @@
 {
     "buttonProfile":"Sobre mí",
-    "buttonContact": "contacto",
+    "buttonContact": "Contacto",
     "designerText":"Diseño Ux Ui",
     "devText":"Desarrollo web.",
-    "description": "Mi enfoque principal es ayudarte a hacer realidad tus proyectos digitales. Me especializo en la creación o rediseño de aplicaciones y sitios web que sean funcionales y atractivos para tus usuarios.",
+    "description": "Mi objetivo principal es ayudarte a hacer realidad tus proyectos digitales. Me especializo en la creación o rediseño de aplicaciones y sitios web que sean funcionales y atractivos para tus usuarios.",
     "projectTitle":"Proyectos",
     "filtertext":"Development",
     "about":"Sobre mí",
@@ -11,6 +11,7 @@
     "aboutP2":"Arquitecta de profesión, en los últimos años he explorado y cultivado mi nueva pasión: el diseño de productos digitales. Al igual que en la arquitectura, mi interés se centra en crear productos que no solo sean visualmente atractivos, sino también útiles y que, de alguna manera, contribuyan a mejorar la vida de las personas.",
     "aboutP3":"Mi experiencia en el campo del diseño me ha proporcionado una sensibilidad hacia los detalles visuales y una profunda curiosidad por los aspectos técnicos. Es por eso que, además de enfocarme en la parte visual, disfruto comprender los aspectos técnicos de los proyectos en los que trabajo. Esta habilidad me ha permitido mejorar mi comunicación con profesionales de diversas áreas.",
     "aboutP4":" Actualmente, compagino mi labor como arquitecta con proyectos de diseño web en modo freelance, sin embargo, mi deseo es enfocarme completamente en el diseño y desarrollo digital. Por esta razón, estoy buscando colaboraciones y nuevas oportunidades laborales.",
+     
     "happy":{
       "homeText":"Design thinking como una herramienta para resolver los problemas actuales.",
       "resume":"HappyLife es un proyecto que tiene como objetivo encontrar una solución al problema del aislamiento social, utilizando herramientas del design thinking."
@@ -38,6 +39,10 @@
     "cv":{
       "homeText":"Creación de un tema personalizado en Wordpress.",
       "resume":"Blog creado con WordPress. El proyecto consiste en la creación e integración de un tema personalizado para WordPress, la creación de una base de datos y su publicación."
+    },
+    "coa":{
+      "homeText":"Creación de un sitio web personalizado.",
+      "resume":"Sitio web creado con WordPress y Elementor pro. Consiste en la construccion del sitio web administrable, para una nueva marca de chocolates proteicos. Diseño realizado por:"
     },
     "download":"Descargar cv",
     "contactTitle":"Contáctame"
