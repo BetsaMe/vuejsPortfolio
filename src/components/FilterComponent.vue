@@ -1,24 +1,21 @@
 <template>
   <div class="project-selection">
     <h3 class="scroll-fade">{{ $t("projectTitle") }}</h3>
-    <ul>
-      <li class="btn-filter scroll-fade" @click="btnClickHandler">
-        <span class="arrow" :class="typeOfProject ? 'arrow-visible' : ''">
-        </span>
-        <span
-          class="text underlined-02"
-          :class="typeOfProject ? 'selected-tab' : ''"
-          >UI/UX Design</span
-        >
-      </li>
-      <li class="btn-filter scroll-fade" @click="btnClickHandler">
-        <span class="arrow" :class="!typeOfProject ? 'arrow-visible' : ''">
-        </span>
-        <span
-          class="text underlined-02"
-          :class="!typeOfProject ? 'selected-tab' : ''"
-          >{{ $t("filtertext") }}</span
-        >
+    <ul class="scroll-fade">
+      <li
+        v-for="(item, index) in [
+          { text: 'UI/UX Design', type: true },
+          { text: $t('filtertext'), type: false },
+        ]"
+        :key="index"
+        class="btn-filter"
+        @click="selectTab(index)"
+        :class="selectedIndex === index ? 'selected-tab' : ''"
+      >
+        <div class="ctn-arrow" v-if="selectedIndex === index">
+          <span class="arrow"></span>
+        </div>
+        <span class="text">{{ item.text }}</span>
       </li>
     </ul>
   </div>
@@ -33,12 +30,23 @@ export default {
     btnClickHandler: { type: Function },
     typeOfProject: { type: Boolean },
   },
+  data() {
+    return {
+      selectedIndex: 0, // Almacena el índice del botón seleccionado
+    };
+  },
   mounted() {
     ScrollTrigger.refresh();
     gsap.registerPlugin(ScrollTrigger);
     this.revealText();
   },
   methods: {
+    selectTab(index) {
+      if (this.selectedIndex !== index) {
+        this.selectedIndex = index;
+        this.btnClickHandler(index); // Pasa el índice seleccionado al padre
+      }
+    },
     revealText() {
       let el = gsap.utils.toArray(".scroll-fade");
       el.forEach((element) => {
@@ -60,9 +68,8 @@ export default {
 /* Project filters */
 .project-selection {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin: 0 15% 50px;
+  flex-direction: column;
+  margin: 0 15%;
   padding: 30px 20px;
 }
 
@@ -70,53 +77,68 @@ export default {
   font-size: 7.5vw;
   margin: 0;
   line-height: 100%;
-  width: 50%;
+  width: 100%;
 }
-.project-selection ul {  
+.project-selection ul {
   padding: 0;
-  margin: 0;
+  margin: 50px 0;
   z-index: 14;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 .btn-filter {
   position: relative;
-  padding: 10px 10px 0;
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+  width: 220px;
+  height: 45px;
+  background-color: #fff;
+  border: 1px solid #616fe4;
+  margin: 0 20px;
+  border-radius: 60px;
+  transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.btn-filter:hover {
+  background-color: #616fe4;
+  color: #fff;
 }
 .btn-filter .text {
   font-weight: normal;
-  font-size: 20px;
+  font-size: 16px;
   width: max-content;
 }
+/* Arrow container */
+.ctn-arrow {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 28px;
+  height: 28px;
+}
 .arrow {
-  content: url("/public/images/arrow-right.svg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: url("/public/images/whitearrow-01.svg");
   height: 28px;
   width: 28px;
-  transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1),
-    opacity 0.4s cubic-bezier(0.86, 0, 0.07, 1);
-  display: inline-block;
-  margin-right: 10px;
+  transition: transform 0.3s cubic-bezier(0.86, 0, 0.07, 1);
   transform-origin: left center;
-  opacity: 0;
-  transform: translateX(-75%) scaleX(0.1);
-}
-.arrow-visible {
   opacity: 1;
-  transform: translateX(0) scaleX(1);
 }
-.btn-filter .selected-tab {
-  font-weight:600;
-  background-position: 100% 100%;
-  background-size: 50% 2px;
+.selected-tab {
+  font-weight: 600;
+  background-color: #616fe4;
+  color: #fff;
 }
+
+/* Responsive Styles */
 @media only screen and (max-width: 1024px) {
   .project-selection {
     padding: 30px;
@@ -127,13 +149,14 @@ export default {
 }
 @media only screen and (max-width: 768px) {
   .project-selection {
-    margin: 0 10% 50px;
+    margin: 0 10%;
+    padding-bottom: 0;
   }
   .project-selection h3 {
     font-size: 60px;
   }
   .btn-filter {
-    padding: 4px 10px 0;
+    min-width: 160px;
   }
   .btn-filter .text {
     font-size: 14px;
@@ -141,29 +164,26 @@ export default {
 }
 @media screen and (max-width: 480px) {
   .project-selection {
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 0;
+    margin: 30px 0;
   }
   .project-selection h3 {
     font-size: 65px;
     margin-bottom: 10px;
-  }
-  .project-selection ul {
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 10px 0;
     width: 100%;
   }
+  .project-selection ul {
+    margin: 25px 0;
+    flex-direction: column;
+  }
+  .project-selection ul li {
+    margin: 10px;
+  }
   .btn-filter {
-    padding: 0;
+    height: 44px;
+    width: auto;
   }
-  .arrow {
-    display: none;
-  }
-  .text {
-    margin: 0;
-    padding: 4px;
+  .btn-filter .text {
+    font-size: 12px;
   }
 }
 </style>

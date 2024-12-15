@@ -3,25 +3,112 @@
   "buttonContact": "contact",
   "designerText":"Ux Ui Designer",
   "devText":"Intégratrice.",
-  "description": "Je suis là pour t'accompagner dans la création ou la refonte d'interfaces web et pour t'aider à donner vie à tes projets.",
+  "description": "Salut ! 🎨✨ Je suis Betsa, et je crée des applications et des sites web pensés pour vos utilisateurs. Découvrez mon portfolio et trouve l’inspiration pour donner vie à tes idées!",
   "projectTitle":"Projets",
   "filtertext":"Intégration",
+  "button01":"decouvrir",
+
   "about":"À propos",
-  "aboutP1":"Je m'appelle Betsabé, mon travail combine expérience utilisateur, conception visuelle et développement frontend.",
-  "aboutP2":"Après avoir travaillé pendant plusieurs années en tant qu'architecte, j'ai réorienté ma carrière vers une nouvelle passion : la création de produits numériques.",
-  "aboutP3":"Mon parcours professionnel m'a permis d'acquérir une grande sensibilité aux détails visuels, ainsi qu'une grande curiosité pour les aspects techniques. C'est pourquoi le développement frontend m'intéresse particulièrement.",
-  "aboutP4":"Je travaille actuellement en freelance et je suis à la recherche d'un contrat permanent. Si tu souhaites travailler avec moi, n'hésite pas à me contacter.",
+  "aboutP1":"Bonjour, Merci de visiter cet espace. J’aimerais vous en dire un peu plus sur moi.",
+  "aboutP2":"Je m’appelle Betsabé, je suis née au Venezuela et j’ai la chance de vivre aujourd’hui dans l’une de mes villes préférées : Madrid.",
+  "aboutP3":"J’ai toujours eu une passion profonde pour le design et la créativité. Cette passion m’a poussée à étudier l’architecture, une discipline qui m’a apporté beaucoup de satisfaction et des expériences inoubliables. Cependant, ma curiosité et mon envie d’apprendre ne se sont jamais arrêtées.",
+  "aboutP4":"En 2021, j’ai décidé de franchir une nouvelle étape et d’explorer le monde du design de produits numériques, un domaine qui m’a permis d’élargir mes horizons créatifs.",
+  "aboutP5":"Au cours de ce parcours, une chose qui a particulièrement retenu mon attention est que, tout comme en architecture, un produit numérique ne doit pas seulement être esthétique, mais aussi fonctionnel. Cela m’a permis de comprendre que de nombreux outils et principes appris en tant qu’architecte pouvaient être appliqués à ce nouveau domaine, me permettant ainsi de combiner le meilleur des deux mondes.",
+  "aboutP6":"Actuellement, je partage mon temps entre mon travail d’architecte et des projets de conception web en freelance. Toutefois, mon véritable objectif est de me consacrer entièrement au design et au développement numérique, un domaine qui me passionne profondément. C’est pourquoi je suis à la recherche de collaborations et de nouvelles opportunités professionnelles où je pourrais continuer à grandir, apprendre et apporter mon expérience ainsi que ma créativité.",
   "happy":{
     "homeText":"Le design thinking comme outil de résolution des problèmes.",
-    "resume":"Happy life est un projet qui visait à comprendre et à trouver des solutions innovantes aux problèmes d'isolement social résultant de la pandémie de Covid 19. À cette fin, une recherche sur les utilisateurs et différents exercices de réflexion ont été réalisés en utilisant le design thinking comme instrument."
+    "resume":"Happy life est un projet qui visait à comprendre et à trouver des solutions innovantes aux problèmes d'isolement social résultant de la pandémie de Covid 19. À cette fin, une recherche sur les utilisateurs et différents exercices de réflexion ont été réalisés en utilisant le design thinking comme instrument.",
+    "infoByProject": [
+      {
+        "title": "resumen",
+        "paragraph": "En la actualidad, la sociedad enfrenta un problema creciente de aislamiento social. A pesar de los avances tecnológicos que permiten una mayor conectividad virtual, la capacidad de establecer conexiones humanas genuinas parece estar disminuyendo. Las largas jornadas laborales, la urbanización, y el uso intensivo de las redes sociales están creando barreras invisibles que dificultan las interacciones cara a cara."
+      },
+      {
+        "title": "Desafíos",
+        "paragraph": "En nuestra investigación inicial, nuestra primera misión fue identificar el problema y tratar de comprender quiénes son nuestros posibles usuarios. Identificar a los usuarios y a los diferentes actores relacionados con el problema nos permite generar ideas de manera mucho más sencilla y responder preguntas como: ¿Por qué?, ¿para quién? y ¿para qué?"
+      },
+      {
+        "title": "Benchmark"
+      },
+      {
+        "title": "Value Proposition canvas",
+        "paragraph": "EL Value Proposition Canvas nos permitió visualizar a los clientes, sus necesidades, sus problemas y cómo una propuesta de valor con características útiles puede ayudar a aliviar esas necesidades."
+      },
+      {
+        "title": "User persona y User journey"
+      },
+      {
+        "title": "Diseño de interfaz (primeras ideas)"
+      },
+      {
+        "title": "Diseño de interfaz (primeras ideas)"
+      }
+    ]
   },
   "figy":{
     "homeText":"Conception d'une marketplace app pour la vente de produits phygitaux et écologiques.",
-    "resume":"FIGY est une application mobile, conçue comme projet de fin d'études pour le Mastère en expérience utilisateur d'Elisava. Il s'agit d'une plateforme disruptive qui propose des produits écologiques associés à un NFT, garantissant leur traçabilité."
+    "resume":"FIGY est une application mobile, conçue comme projet de fin d'études pour le Mastère en expérience utilisateur d'Elisava. Il s'agit d'une plateforme disruptive qui propose des produits écologiques associés à un NFT, garantissant leur traçabilité.",
+    "infoByProject": [
+      {
+        "title": "resumen",
+        "paragraph": "En la actualidad, la sociedad enfrenta un problema creciente de aislamiento social. A pesar de los avances tecnológicos que permiten una mayor conectividad virtual, la capacidad de establecer conexiones humanas genuinas parece estar disminuyendo. Las largas jornadas laborales, la urbanización, y el uso intensivo de las redes sociales están creando barreras invisibles que dificultan las interacciones cara a cara."
+      },
+      {
+        "title": "Desafíos",
+        "paragraph": "En nuestra investigación inicial, nuestra primera misión fue identificar el problema y tratar de comprender quiénes son nuestros posibles usuarios. Identificar a los usuarios y a los diferentes actores relacionados con el problema nos permite generar ideas de manera mucho más sencilla y responder preguntas como: ¿Por qué?, ¿para quién? y ¿para qué?"
+      },
+      {
+        "title": "Benchmark"
+      },
+      {
+        "title": "Value Proposition canvas",
+        "paragraph": "EL Value Proposition Canvas nos permitió visualizar a los clientes, sus necesidades, sus problemas y cómo una propuesta de valor con características útiles puede ayudar a aliviar esas necesidades."
+      },
+      {
+        "title": "User persona y User journey"
+      },
+      {
+        "title": "Diseño de interfaz (primeras ideas)"
+      },
+      {
+        "title": "Diseño de interfaz (primeras ideas)"
+      }
+    ]
   },
   "wand":{
     "homeText":"Conception d'une application domotique pour le contrôle des appareils connectés de la maison.",
-    "resume": "Wand est un projet qui consistait en la création d'une application pour une maison intelligente. L'objectif du client était de centraliser l'utilisation de tous les objets connectés d'une maison, même s'ils appartiennent à des marques différentes, dans une seule application."
+    "resume": "Wand est un projet qui consistait en la création d'une application pour une maison intelligente. L'objectif du client était de centraliser l'utilisation de tous les objets connectés d'une maison, même s'ils appartiennent à des marques différentes, dans une seule application.",
+    "infoByProject": [
+      {
+        "title": "Wand, el asistente del hogar que te ayuda a ganar tiempo libre.",
+        "paragraph": "El desafío era crear una aplicación que conecte y controle mágicamente todos los tipos de dispositivos IoT disponibles. Wand debería ser capaz de gestionar una casa, incluyendo plataformas de streaming, con una experiencia transparente para jóvenes y familias tecnológicas que también se interesan en la eficiencia energética y la seguridad doméstica"
+      },
+      {
+        "title": "Diagrama de afinidad",
+        "paragraph": "Durante la investigación con los usuarios, utilizamos el diagrama de afinidad para organizar todas las ideas surgidas de las entrevistas con los usuarios, clasificándolas por categoría y estableciendo prioridades"
+      },
+      {
+        "title": "User Personas",
+        "paragraph": "El user persona es una herramienta de diseño muy poderosa que nos permitió visualizar las interacciones con la nueva aplicación y mitigar los puntos de fricción para los usuarios potenciales."
+      },
+      {
+        "title": "Arquitectura de la información"
+      },
+      {
+        "title": "Wireframes",
+        "paragraph": "Una vez definidas las funcionalidades, cada miembro del equipo propuso diferentes maquetas de baja fidelidad para dar forma a la aplicación."
+     
+      },
+      {
+        "title": "Identidad visual"
+      },
+      {
+        "title": "Diseño de interfaz"
+      },
+      {
+        "title": "Diseño de interfaz"
+      }
+    ]
   },
   "groupomania":{
     "homeText":"Création d'un réseau social d'entreprise pour améliorer la satisfaction des employés.",
@@ -42,9 +129,13 @@
   },
   "coa":{
     "homeText":"Custom website development",
-    "resume":"Website created with WordPress and Elementor Pro. It consists of building a manageable website for a new brand of protein chocolates. Design by:"
+    "resume":"Site web développé avec WordPress et Elementor Pro. COA&co est une nouvelle marque de chocolats protéinés. Le design a été réalisé par"
   },
   "download":"télécharger cv",
-  "contactTitle":"Contacte-moi !"
+  "contactTitle":"Contacte-moi !",
+  "footerParagraph":"Si tu as des questions sur mes projets ou si tu veux en savoir plus sur mon travail, je serais ravie de t’aider. Contacte-moi !",
+  "sendMessage":"Envoyer un message"
+
+
 }
 

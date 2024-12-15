@@ -23,16 +23,25 @@
         <label>Message:</label>
         <textarea
           name="message"
-          rows="5"
+          rows="15"
           placeholder="Message"
           v-model="messageMsg"
         ></textarea>
       </fieldset>
-      <input
-        type="submit"
-        class="btn-submit"
-      />
+
+      <button type="submit" class="btn-submit">
+        <DownloadBtn
+          :title="'sendMessage'"
+          :bgColor="'#fff'"
+          :textColor="'#616fe4'"
+          :borderColor="'#616fe4'"
+          :hoverBgColor="'#616fe4'"
+          :hoverTextColor="'#fff'"
+          :hoverBorderColor="'#616fe4'"
+        />
+      </button>
     </form>
+
     <div class="infos-contact">
       <div class="infos-child box">
         <h5>email</h5>
@@ -52,9 +61,13 @@
 <script>
 import axios from "axios";
 import gsap from "gsap";
+import DownloadBtn from "@/components/DownloadBtn.vue";
 
 export default {
   name: "ContactView",
+  components: {
+    DownloadBtn,
+  },
   data() {
     return {
       nameMsg: "",
@@ -63,7 +76,7 @@ export default {
       isMessageSent: false, // Nueva propiedad para controlar la alerta
     };
   },
-  mounted(){
+  mounted() {
     this.contactAnimation();
   },
   methods: {
@@ -98,13 +111,14 @@ export default {
         });
     },
     contactAnimation() {
-        gsap.to(".box", { 
-          stagger: 0.1, 
-          opacity: 1, 
-          duration: 1, 
-          y: 0,ease: "power2.inOut" 
-        })
-      }
+      gsap.to(".box", {
+        stagger: 0.1,
+        opacity: 1,
+        duration: 1,
+        y: 0,
+        ease: "power2.inOut",
+      });
+    },
   },
 };
 </script>
@@ -118,7 +132,6 @@ export default {
   z-index: 10;
   display: flex;
   flex-wrap: wrap;
-  
 }
 #contact-form > h3 {
   font-family: "pp_eikothin", sans-serif;
@@ -128,10 +141,9 @@ export default {
   margin: 20px 20px 30px;
   width: 100%;
 }
-#form{
-  background-color: #fff;
-   display: flex;
-  flex-direction: column; 
+#form {
+  display: flex;
+  flex-direction: column;
   align-items: flex-end;
   padding: 40px;
 }
@@ -144,7 +156,7 @@ fieldset {
 }
 #form-inputs {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   margin: 0;
   padding: 0;
   border: none;
@@ -181,30 +193,14 @@ fieldset {
   margin-bottom: 30px;
 }
 .btn-submit {
-  width: 50%;
+  background-color: transparent;
+  border: none;
   float: right;
-  font-size: 15px;
-  line-height: 24px;
-  padding: 12px 32px;
-  position: relative;
-  background-color: var(--white-bg);
-  border: solid var(--black) 1px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  color: var(--grey1);
-  text-transform: uppercase;
   cursor: pointer;
   margin-top: 20px;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1),
-    color 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.btn-submit:hover,
-.btn-submit:focus {
-  background: var(--black);
-  color: var(--white-bg);
-}
-.alert-message{
-  color:rgb(169, 31, 220) ;
+.alert-message {
+  color: rgb(169, 31, 220);
   padding: 0 32px;
   width: 100%;
 }
@@ -212,9 +208,9 @@ fieldset {
   opacity: 0;
   transform: translateY(40px);
 }
-@media only screen and (max-width: 1024px){
-  #contact-form > h3{
-    font-size: 8vw ;
+@media only screen and (max-width: 1024px) {
+  #contact-form > h3 {
+    font-size: 8vw;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -224,7 +220,7 @@ fieldset {
     flex-direction: column;
     padding: 130px 0 0px;
   }
-  #contact-form > h3{
+  #contact-form > h3 {
     padding: 25px;
     margin: 0;
   }
@@ -235,25 +231,24 @@ fieldset {
   .infos-contact {
     text-align: start;
   }
-
 }
 @media only screen and (max-width: 480px) {
-  #form{
-  padding: 20px;
-}
+  #form {
+    padding: 20px;
+  }
   #contact-form {
     width: 100%;
     margin: 0 auto;
-  } 
-  .infos-contact{
+  }
+  .infos-contact {
     padding: 0 20px;
     margin-top: 50px;
   }
   .btn-submit {
     width: 100%;
   }
-  #contact-form > h3{
-    font-size: 48px ;
+  #contact-form > h3 {
+    font-size: 48px;
   }
 }
 </style>

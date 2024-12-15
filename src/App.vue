@@ -51,7 +51,7 @@ export default {
          url('./fonts/eiko-font/ppeiko-lightitalic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
+    font-display: swap; /* Añadido para evitar problemas */
 }
 
 @font-face {

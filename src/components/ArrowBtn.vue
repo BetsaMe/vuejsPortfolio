@@ -1,10 +1,11 @@
 <template>
   <a
-    class="btn-arrow underlined-02 "
-  >
-    <img src="/images/arrow-left.svg" alt="arrow" :class="{ 'before-arrow': arrowPosition === 'after' }"/>
-    <span>{{title}}</span>
-    <img src="/images/arrow-right.svg" alt="arrow" :class="{ 'after-arrow': arrowPosition === 'before' }"/>
+    :href="href"
+    :target="target"
+    class="btn-arrow"
+  >    
+    <span>{{ $t(title) }}</span>
+    <img src="/images/arrow-right.svg" alt="arrow" class="after"/>
   </a>
 </template>
 
@@ -13,8 +14,8 @@ export default {
   name: "ArrowBtn",
   props:{
     title:{ type:String},
-    arrowPosition: { type: String, default: 'after' } // Prop para la posición de la flecha, por defecto 'after'
-
+    href:{ type:String},
+    target:{ type:String},
   }
 };
 </script>
@@ -24,29 +25,36 @@ export default {
   display: flex;
   align-items: center;
   width: fit-content;
+  margin: 0 7.5px;
 }
 .btn-arrow span {
-  text-transform: uppercase;
   font-size: 14px;
+  line-height: 28px;
   font-weight: 600;
-  margin:0 8px;
+  text-transform: uppercase;
+  text-decoration: underline;
 }
 .btn-arrow img {
   height: 30px;
   width: 30px;
+  transition: transform 0.3s ease; /* Para animar el movimiento */  
 }
 .btn-arrow:hover {
   background-size: 100% 2px;
 }
-.before-arrow, .after-arrow{
-  display: none;
+
+.btn-arrow span:hover ~ img {
+  transform: rotate(-30deg); /* Cambia de "translate" a "transform" */
 }
+
+.btn-arrow span:hover{
+  color: #616fe4;
+} 
 @media screen and (max-width: 480px){
   .btn-arrow span {
     font-size: 12px;
   }
 }
-
 
 </style>
 

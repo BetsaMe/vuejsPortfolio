@@ -1,21 +1,12 @@
 <template>
-  <div class="circle-container">
-    <div class="circle1"></div>
-    <div class="circle2"></div>
-  </div>
   <HeroSection />
   <section id="all-projects">
     <FilterComponent
       :btnClickHandler="this.toggleCategory"
       :typeOfProject="this.isDesign"
     />
-    
-    <transition-group
-      name="list"
-      mode="in-out"
-      @before-enter="beforeEnter"
-      @enter="enter"
-    >
+
+    <transition-group name="list" @before-enter="beforeEnter" @enter="enter">
       <div :id="projet.id" v-for="projet in projetCategory" :key="projet.id">
         <div class="project-content-container">
           <div class="project-text">
@@ -31,34 +22,33 @@
                   v-for="element in projet.techno"
                   :key="element"
                 >
+                  <div class="little-dot"></div>
                   {{ element }}
                 </li>
               </ul>
               <router-link
-                :to=" { name: 'single', params: { projetId: projet.id } }"                
+                :to="{ name: 'single', params: { projetId: projet.id } }"
               >
-                <ArrowBtn 
-                  title="Discover" 
-                  class="scroll-content"
-                  arrowPosition="after"
-                />
+                <ArrowBtn :title="'button01'" class="scroll-content" />
               </router-link>
             </div>
           </div>
           <router-link
             class="img-container"
             :to="{ name: 'single', params: { projetId: projet.id } }"
+            :style="{ backgroundColor: projet.backgroundImage }"
           >
-            <img
-              class="projet-img"
-              :src="projet.coverImage"
-              :alt="projet.alt"
-            />
+            <div class="sub-container">
+              <img
+                class="projet-img"
+                :src="projet.coverImage"
+                :alt="projet.alt"
+              />
+            </div>
           </router-link>
         </div>
       </div>
     </transition-group>
-  
   </section>
 </template>
 
@@ -75,7 +65,7 @@ export default {
   components: {
     HeroSection,
     FilterComponent,
-    ArrowBtn
+    ArrowBtn,
   },
   data() {
     return {
@@ -84,19 +74,15 @@ export default {
     };
   },
   computed: {
-    projetCategory: function () {
-      if (this.isDesign) {
-        return this.projets.filter((projet) => projet.category === "design");
-      } else {
-        return this.projets.filter((projet) => projet.category === "code");
-      }
+    projetCategory() {
+      const category = this.isDesign ? "design" : "code";
+      return this.projets.filter((projet) => projet.category === category);
     },
   },
   mounted() {
     ScrollTrigger.refresh();
     gsap.registerPlugin(ScrollTrigger);
-    this.revealImages();
-    this.revealContent();
+    this.initGSAPAnimations();
     window.addEventListener("resize", ScrollTrigger.refresh());
   },
   unmounted() {
@@ -116,15 +102,30 @@ export default {
     return { beforeEnter, enter };
   },
   methods: {
-    toggleCategory() {
-      this.isDesign = !this.isDesign;
+    initGSAPAnimations() {
+      this.revealImages();
+      this.revealContent();
     },
-    revealImages() { 
+    // handleResize() {
+    //   ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Elimina triggers antiguos
+    //   this.initGSAPAnimations();
+    //   ScrollTrigger.refresh(); // Asegúrate de que se recalculan
+    // },
+    toggleCategory(index) {
+      if (this.isDesign !== (index === 0)) {
+        // Cambia la categoría solo si el índice del botón clicado es diferente al actual
+        this.isDesign = index === 0;
+      }
+    },
+    revealImages() {
       let mm = gsap.matchMedia();
-      mm.add("(min-width: 800px)", () =>{
+      mm.add("(min-width: 800px)", () => {
         let images = gsap.utils.toArray(".img-container");
-          images.forEach((image) => {
-            gsap.fromTo(image,{opacity: 0}, {
+        images.forEach((image) => {
+          gsap.fromTo(
+            image,
+            { opacity: 0 },
+            {
               opacity: 1,
               duration: 0.5,
               scrollTrigger: {
@@ -132,39 +133,39 @@ export default {
                 start: "top center",
                 // scrub: 1,
               },
-            });
-          });
-      })
+            }
+          );
+        });
+      });
     },
     revealContent() {
-      this.$nextTick(() =>{
+      this.$nextTick(() => {
         let mm = gsap.matchMedia();
-        mm.add("(min-width: 800px)", () =>{
+        mm.add("(min-width: 800px)", () => {
           let el = gsap.utils.toArray(".scroll-content");
-            el.forEach((element) => {
-              gsap.from(element, {
-                scrollTrigger: { trigger: element },
-                duration: 0.7,
-                ease: "power2",
-                y: 70,
-                opacity: 1,
-                stagger: 0.9,
-              });
+          el.forEach((element) => {
+            gsap.from(element, {
+              scrollTrigger: { trigger: element },
+              duration: 0.7,
+              ease: "power2",
+              y: 70,
+              opacity: 1,
+              stagger: 0.9,
             });
+          });
         });
-      })
+      });
     },
   },
 };
 </script>
 
 <style>
-
 .project-content-container {
   display: grid;
   grid-template-columns: 15% 35% 35% 15%;
   grid-template-rows: 1fr 100px;
-  transition: 1s ease all; 
+  transition: 1s ease all;
 }
 /* Dont delete this */
 .project-text {
@@ -185,19 +186,20 @@ export default {
   line-height: 170px;
   font-family: "pp_eikothin", sans-serif;
   left: -50px;
-  color: #b6b6b6;
 }
 .project-description {
-  padding: 20px 50px;
-  font-size: 17px;
+  padding: 20px 5px;
+  font-size: 16px;
   line-height: 28px;
 }
 .project-description h4 {
   margin: 0;
-  font-size: 24px;
-  text-transform: uppercase;
+  font-size: 36px;
+  line-height: 42px;
+  font-family: "pp_eikothin", sans-serif;
+  font-weight: 600px;
 }
-.project-description p{
+.project-description p {
   margin: 10px 0 40px;
 }
 /* Projet labels */
@@ -208,57 +210,47 @@ export default {
   justify-content: flex-start;
   padding: 0;
 }
+.little-dot {
+  width: 5px;
+  height: 5px;
+  background-color: #616fe4;
+  border-radius: 5px;
+  margin-right: 5px;
+}
 .tech-label {
   font-size: 0.9em;
   font-weight: 500;
   text-align: center;
-  margin: 0 8px 8px 0;
+  margin: 0 5px;
   list-style: none;
-  padding: 0 5px;
-  border-radius: 40px;
-  border: var(--linesStyle);
+  display: flex;
+  align-items: center;
 }
-
 .img-container {
   grid-column: 3/4;
   grid-row: 1/2;
+  background-color: #b2bdfb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+.sub-container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 .projet-img {
   position: relative;
   object-fit: cover;
   height: 100%;
-  width: calc(100% - 11px);
-  left: 10px;
+  width: 100%;
+  transition: transform 0.3s; /* Para navegadores modernos */
+  -webkit-transition: -webkit-transform 0.3s; /* Para navegadores antiguos */
   cursor: url("/public/images/black-circle.svg"), auto;
 }
-/* Gradients */
-.circle-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-.circle1,
-.circle2 {
-  position: absolute;
-  content: "";
-  opacity: 0;
-}
-.circle1 {
-  width: 300px;
-  height: 380px;
-  top: -110px;
-  left: -30px;
-  background: radial-gradient(190px, #c5c6ff, transparent);
-  filter: blur(20px);
-}
-.circle2 {
-  width: 500px;
-  height: 500px;
-  top: 50vh;
-  right: -110px;
-  background: radial-gradient(280px, #96f5e8, transparent);
-  filter: blur(60px);
+.projet-img:hover {
+  transform: scale(1.1, 1.1);
 }
 
 /* End Animated gradients */
@@ -274,10 +266,6 @@ export default {
   .project-text {
     grid-row: 2/3;
   }
-  .projet-img {
-    width: calc(100% - 1px);
-    left: 0;
-  }
   .circle2 {
     right: -250px;
   }
@@ -286,7 +274,7 @@ export default {
   .project-content-container {
     grid-template-columns: 10% 1fr 10%;
     grid-template-rows: 350px 1fr 80px;
-  } 
+  }
   .big-number {
     font-size: 140px;
     left: -5%;
@@ -294,8 +282,15 @@ export default {
   .project-description {
     padding: 20px;
   }
+  .projet-img {
+    padding: 10px;
+  }
+  .projet-img:hover {
+    height: 100%;
+    width: 100%;
+  }
   .img-container {
-    height: 350px;
+    padding: 0;
   }
 }
 
@@ -312,22 +307,17 @@ export default {
     display: none;
   }
   .img-container {
-    height: 300px;
-    border: none;
-    border-bottom: var(--linesStyle);
+    margin: 0 20px;
+    opacity: 1;
   }
   .project-description h4 {
-    font-size: 20px;
+    font-size: 28px;
   }
-  .circle1 {
-    display: none;
+  .project-selection {
+    padding: 0 20px;
   }
-  .circle2 {
-    top: 55vh;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(150px, #96f5e8, transparent);
-    right: -140px;
+  .project-selection ul {
+    justify-content: space-between;
   }
 }
 </style>
