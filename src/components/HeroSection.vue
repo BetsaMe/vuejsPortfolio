@@ -174,9 +174,12 @@ h1,
     width: 100%;
     margin: 0;
     padding: 100px 20px 0px;
+    height: 110vh;
+    
   }
   .description {
     width: 100%;
+    margin-top: 30px;
   }
   h1,
   .second-line {
@@ -189,14 +192,14 @@ h1,
   .semicircle {
     width: 70px;
     height: 70px;
-    bottom: 45px;
+    bottom: 25px;
     right: -35px;
   }
   .animated-text {
     width: 140px;
     height: 140px;
     position: absolute;
-    bottom: 10px;
+    bottom: -10px;
     right: -70px;
   }
 }

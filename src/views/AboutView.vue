@@ -216,7 +216,7 @@ export default {
   }
   .about-text > h4 {
     font-size: 12vw;
-    padding: 0 10px;
+    padding: 0 20px;
   }
 }
 </style>

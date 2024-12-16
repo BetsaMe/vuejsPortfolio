@@ -233,7 +233,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 20px;
 }
 .sub-container {
   height: 100%;
@@ -318,6 +318,12 @@ export default {
   }
   .project-selection ul {
     justify-content: space-between;
+  }
+  .projet-img {
+    padding: 3px;
+  }
+  .projet-img:hover {
+    transform: none;
   }
 }
 </style>

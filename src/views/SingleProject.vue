@@ -300,6 +300,7 @@ export default {
   }
   .text-bloc {
     padding: 20px;
+    width: 100%;
   }
   .head-image-container {
     height: 300px;
