@@ -98,9 +98,9 @@ h1,
   line-height: 1.5em;
   margin-right: 15px;
   width: 48%;
-  margin-top: 40px;
+  margin-top: 60px;
   background-color: #ffeeae;
-  padding: 22px 18px;
+  padding: 40px;
   border-radius: 40px 40px 40px 0;
 }
 .loop-elements {
@@ -112,7 +112,7 @@ h1,
   content: "";
   width: 100px;
   height: 100px;
-  background-color: var(--pink);
+  background-color: #f5b8e9;
   border-radius: 100%;
   bottom: 50px;
   right: -50px;
@@ -180,6 +180,7 @@ h1,
   .description {
     width: 100%;
     margin-top: 30px;
+    padding: 20px;
   }
   h1,
   .second-line {
@@ -192,14 +193,14 @@ h1,
   .semicircle {
     width: 70px;
     height: 70px;
-    bottom: 25px;
+    bottom: 45px;
     right: -35px;
   }
   .animated-text {
     width: 140px;
     height: 140px;
     position: absolute;
-    bottom: -10px;
+    bottom: 10px;
     right: -70px;
   }
 }

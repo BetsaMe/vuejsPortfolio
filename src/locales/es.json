@@ -3,7 +3,7 @@
   "buttonContact": "Contacto",
   "designerText": "Diseño Ux Ui",
   "devText": "Desarrollo web.",
-  "description": "¡Hola! 🎨✨ Soy Betsa, y me especializo en crear aplicaciones y sitios web pensados para tus usuarios. Explora mi portafolio y encuentra la inspiración que necesitas para llevar tus ideas al siguiente nivel! 🚀",
+  "description": "¡Hola! 🎨✨ Soy Betsa y me dedico al diseño y desarrollo de aplicaciones y sitios web centrados en tus usuarios. Si tienes una idea en mente y necesitas ayuda para hacerla realidad, no dudes en contactarme. ¡Estaré encantada de colaborar contigo! 🚀",
   "projectTitle": "Proyectos",
   "filtertext": "Desarrollo web",
   "button01": "descubrir",
@@ -15,7 +15,30 @@
   "aboutP4": "En 2021 decidí dar un nuevo paso y explorar el mundo del diseño de productos digitales, un campo que me ha permitido expandir mi horizonte creativo.",
   "aboutP5": "A lo largo de este camino, una de las cosas que mas llamo mi atención es que al igual que en la arquitectura, un producto digital no solo debe ser estéticamente agradable, sino también funcional, y esto me llevo a entender que muchas de las herramientas y principios que aprendí como arquitecta podían aplicarse en esta nueva área, lo cual me ha permitido combinar lo mejor de ambos mundos.",
   "aboutP6": "Actualmente compagino mi trabajo como arquitecta con proyectos de diseño web como freelance. Sin embargo, mi verdadera meta es dedicarme por completo al diseño y desarrollo digital, un área que me apasiona profundamente. Por eso, estoy en búsqueda de colaboraciones y nuevas oportunidades laborales donde pueda seguir creciendo, aprendiendo y aportando mi experiencia y creatividad.",
-
+  "idea": {
+    "homeText": "Rediseño de sitio web para agencia de arquitectura.",
+    "resume": "Estudio Idea Espacio, una constructora con amplia trayectoria en el mercado, buscaba renovar su sitio web para reflejar su evolución y su compromiso con la innovación en el sector de la construcción.",
+    "infoByProject": [
+      {
+        "title": "Desafíos",
+        "paragraph": "Este proyecto de rediseño surge con el desafío de actualizar no solo su plataforma digital, sino también su identidad visual, alineándola con los estándares contemporáneos de diseño y funcionalidad. El objetivo del rediseño es dotar a la empresa de una presencia digital que destaque en un mercado competitivo, ofreciendo una experiencia de usuario optimizada, ágil y visualmente atractiva."
+      },
+      {
+        "title": "¿Cómo actualizar la Imagen de Marca sin Sacrificar su Autenticidad y Valores?",
+        "paragraph": "Para desarrollar este proyecto de rediseño, nuestro primer paso fue establecer una conexión profunda con el cliente. Nos sumergimos en su entorno, conocimos sus servicios y exploramos sus instalaciones para captar de manera precisa su esencia, sus valores fundamentales y su misión en el mercado."
+      },
+      {
+        "title": "Componentes básicos"
+      },
+      {
+        "title": "Antes y después",
+        "paragraph": "Para el diseño de la web, se optó por un enfoque minimalista, priorizando un diseño limpio que permita visualizar los elementos de forma mas armoniosa La intención era plantear un diseño que destaque las imágenes sin distracciones y que permita acceder fácilmente a la información."
+      },
+      {
+        "title": "Elementos gráficos"
+      }
+    ]
+  },
   "happy": {
     "homeText": "Design thinking como una herramienta para resolver los problemas actuales.",
     "resume": "HappyLife es un proyecto que tiene como objetivo encontrar una solución al problema del aislamiento social, utilizando herramientas del design thinking.",

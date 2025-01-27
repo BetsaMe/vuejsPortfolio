@@ -71,16 +71,19 @@ export default {
   },
   methods: {
     showingNavbar() {
-      let navbar = document.querySelector(".nav-desktop");
+  let navbar = document.querySelector(".nav-desktop");
 
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > 0) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
-        }
-      });
-    },
+  if (window.innerWidth > 768) {
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 0) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  }
+},
+
     toggleMenu() {
       this.isOpen = !this.isOpen;
       this.handleResize();

@@ -15,6 +15,30 @@
     "aboutP4":"In 2021, I decided to take a new step and dive into the world of digital product design, a field that has allowed me to expand my creative horizons.",
     "aboutP5":"Throughout this journey, one thing that caught my attention is how, much like in architecture, a digital product must not only be aesthetically pleasing but also functional. This realization helped me see that many of the tools and principles I learned as an architect could be applied to this new area, allowing me to combine the best of both worlds.",
     "aboutP6":"Currently, I balance my work as an architect with freelance web design projects. However, my true goal is to fully dedicate myself to digital design and development, a field I’m deeply passionate about. That’s why I’m seeking collaborations and new job opportunities where I can continue growing, learning, and contributing my experience and creativity.",
+    "idea": {
+      "homeText": "Website redesign for architecture agency.",
+      "resume": "Estudio Idea Espacio, a construction company with extensive experience in the market, was looking to renew its website to reflect its evolution and its commitment to innovation in the construction sector.",
+      "infoByProject": [
+        {
+          "title": "Challenge",
+          "paragraph": "This redesign project arose from the challenge of updating not only its digital platform, but also its visual identity, aligning it with contemporary standards of design and functionality. The goal of the redesign is to provide the company with a digital presence that stands out in a competitive market, offering an optimized, agile and visually appealing user experience."
+        },
+        {
+          "title": "How to update the Brand Image without sacrificing its Authenticity and Values?",
+          "paragraph": "To develop this redesign project, our first step was to establish a deep connection with the client. We immersed ourselves in their environment, learned about their services and explored their facilities to accurately capture their essence, their core values and their mission in the market."
+        },
+        {
+          "title": "Basic components"
+        },
+        {
+          "title": "Before and after",
+          "paragraph": "For the web design, we have opted for a minimalist approach, prioritizing a clean design that allows to visualize the elements in a more harmonious way. The intention was to propose a design that highlights the images without distractions and that allows easy access to information."
+        },
+        {
+          "title": "Graphic elements"
+        }
+      ]
+    },
     "happy":{
       "homeText":"Design thinking as a tool to solve today's problems",
       "resume":"HappyLife is a project that aims to find a solution to the problem of social isolation, with a design thinking approach.",

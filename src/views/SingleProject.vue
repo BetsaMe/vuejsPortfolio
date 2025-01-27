@@ -63,7 +63,7 @@
           class="project-paragraph-images"
         />
       </div>
-      <a :href="singleProject.link" target="_blank" class="btn-info-ctn">
+      <a :href="singleProject.link" target="_blank" class="btn-info-ctn" v-if="singleProject.link">
         <DownloadBtn
           title="saber más"
           :bgColor="'#fff'"
