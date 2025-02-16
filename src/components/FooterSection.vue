@@ -61,12 +61,12 @@ export default {
   mounted() {
     ScrollTrigger.refresh();
     gsap.registerPlugin(ScrollTrigger);
+    this.mm = gsap.matchMedia(); 
     this.parallaxContact();
   },
   methods: {
     parallaxContact() {
-      let mm = gsap.matchMedia();
-      mm.add("(min-width: 800px)", () => {
+      this.mm.add("(min-width: 800px)", () => {
         gsap.to(".circle5", {
           x: 120,
           scrollTrigger: {
@@ -75,8 +75,6 @@ export default {
             scrub: 1,
           },
         });
-      });
-      mm.add("(min-width: 800px)", () => {
         gsap.to(".circle6", {
           y: -120,
           scrollTrigger: {
@@ -144,7 +142,7 @@ export default {
   position: absolute;
   bottom: -120px;
   right: 250px;
-  background-color: #b2bdfb;
+  background-color: var(--purple);
   border-radius: 100%;
 }
 .circle6 {
@@ -153,7 +151,7 @@ export default {
   position: absolute;
   bottom: 140px;
   right: -50px;
-  background-color: #ffeeae;
+  background-color: var(--yellow);
   border-radius: 100%;
 }
 @media only screen and (max-width: 768px) {

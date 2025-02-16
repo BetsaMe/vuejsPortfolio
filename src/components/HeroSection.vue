@@ -6,10 +6,9 @@
       <div class="bloc-description">
         <p class="fade-in description">{{ $t("description") }}</p>
         <div class="loop-elements">
-          <div class="semicircle fade-in-left"></div>
           <img
             class="animated-text fade-in-left"
-            src="/images/contour.png"
+            src="/images/textocircular2.png"
             alt="circular text"
           />
         </div>
@@ -99,24 +98,15 @@ h1,
   margin-right: 15px;
   width: 48%;
   margin-top: 60px;
-  background-color: #ffeeae;
-  padding: 40px;
-  border-radius: 40px 40px 40px 0;
+  background-color: var(--yellow);
+  padding: 30px 35px;
+  border-radius: 60px 60px 60px 0;
 }
 .loop-elements {
   position: relative;
   width: 50%;
 }
-.semicircle {
-  position: absolute;
-  content: "";
-  width: 100px;
-  height: 100px;
-  background-color: #f5b8e9;
-  border-radius: 100%;
-  bottom: 50px;
-  right: -50px;
-}
+
 .fade-in {
   opacity: 0;
   transform: translateY(95px);
@@ -126,11 +116,11 @@ h1,
   transform: translateX(95px);
 }
 .animated-text {
-  width: 200px;
-  height: 200px;
+  width: 230px;
+  height: 230px;
   position: absolute;
   bottom: 0px;
-  right: -100px;
+  right: -120px;
 }
 
 /* End of hero section */
@@ -181,6 +171,7 @@ h1,
     width: 100%;
     margin-top: 30px;
     padding: 20px;
+    border-radius: 40px 40px 40px 0;
   }
   h1,
   .second-line {
@@ -190,17 +181,11 @@ h1,
   .bloc-description {
     flex-direction: column;
   }
-  .semicircle {
-    width: 70px;
-    height: 70px;
-    bottom: 45px;
-    right: -35px;
-  }
   .animated-text {
     width: 140px;
     height: 140px;
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     right: -70px;
   }
 }

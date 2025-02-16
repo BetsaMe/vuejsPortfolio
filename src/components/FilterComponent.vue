@@ -1,24 +1,34 @@
 <template>
-  <div class="project-selection">
-    <h3 class="scroll-fade">{{ $t("projectTitle") }}</h3>
-    <ul class="scroll-fade">
-      <li
-        v-for="(item, index) in [
-          { text: 'UI/UX Design', type: true },
-          { text: $t('filtertext'), type: false },
-        ]"
-        :key="index"
-        class="btn-filter"
-        @click="selectTab(index)"
-        :class="selectedIndex === index ? 'selected-tab' : ''"
-      >
-        <div class="ctn-arrow" v-if="selectedIndex === index">
-          <span class="arrow"></span>
-        </div>
-        <span class="text">{{ item.text }}</span>
-      </li>
-    </ul>
-  </div>
+  <ul class="category-tabs scroll-fade">
+    <li
+      class="btn-filter purple-btn"
+      :class="{ 'selected-tab-purple': isDesign }"
+      @click="$emit('changeCategory', true)"
+    >
+      <div class="ctn-arrow" v-if="isDesign">
+        <img
+          :src="isDesign && '/images/whitearrow-01.svg'"
+          class="arrow"
+          alt="arrow"
+        />
+      </div>
+      <span class="text">UI/UX Design</span>
+    </li>
+    <li
+      class="btn-filter yellow-btn"
+      :class="{ 'selected-tab-yellow': !isDesign }"
+      @click="$emit('changeCategory', false)"
+    >
+      <div class="ctn-arrow" v-if="!isDesign">
+        <img
+          :src="!isDesign && '/images/arrow-right.svg'"
+          class="arrow"
+          alt="arrow"
+        />
+      </div>
+      <span class="text">Desarrollo web</span>
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -27,13 +37,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 export default {
   name: "FilterComponent",
   props: {
-    btnClickHandler: { type: Function },
-    typeOfProject: { type: Boolean },
-  },
-  data() {
-    return {
-      selectedIndex: 0, // Almacena el índice del botón seleccionado
-    };
+    isDesign: { type: Boolean },
   },
   mounted() {
     ScrollTrigger.refresh();
@@ -41,12 +45,6 @@ export default {
     this.revealText();
   },
   methods: {
-    selectTab(index) {
-      if (this.selectedIndex !== index) {
-        this.selectedIndex = index;
-        this.btnClickHandler(index); // Pasa el índice seleccionado al padre
-      }
-    },
     revealText() {
       let el = gsap.utils.toArray(".scroll-fade");
       el.forEach((element) => {
@@ -98,14 +96,23 @@ export default {
   justify-content: center;
   width: 220px;
   height: 45px;
-  background-color: #fff;
-  border: 1px solid #616fe4;
   margin: 0 20px;
   border-radius: 60px;
   transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
 }
-.btn-filter:hover {
-  background-color: #616fe4;
+.purple-btn,
+.yellow-btn {
+  background-color: #fff;
+  border: 1px solid var(--purple);
+}
+.yellow-btn:hover,
+.selected-tab-yellow {
+  background-color: var(--yellow);
+  color: var(--grey2);
+}
+.purple-btn:hover,
+.selected-tab-purple {
+  background-color: var(--purple);
   color: #fff;
 }
 .btn-filter .text {
@@ -125,17 +132,11 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  content: url("/public/images/whitearrow-01.svg");
   height: 28px;
   width: 28px;
   transition: transform 0.3s cubic-bezier(0.86, 0, 0.07, 1);
   transform-origin: left center;
   opacity: 1;
-}
-.selected-tab {
-  font-weight: 600;
-  background-color: #616fe4;
-  color: #fff;
 }
 
 /* Responsive Styles */

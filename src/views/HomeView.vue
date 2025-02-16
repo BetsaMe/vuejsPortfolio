@@ -1,10 +1,10 @@
 <template>
   <HeroSection />
   <section id="all-projects">
-    <FilterComponent
-      :btnClickHandler="this.toggleCategory"
-      :typeOfProject="this.isDesign"
-    />
+    <div class="project-selection">
+      <h3 class="scroll-fade">{{ $t("projectTitle") }}</h3>
+      <FilterComponent :isDesign="isDesign" @changeCategory="toggleCategory" />
+    </div>
 
     <transition-group name="list" @before-enter="beforeEnter" @enter="enter">
       <div :id="projet.id" v-for="projet in projetCategory" :key="projet.id">
@@ -71,6 +71,7 @@ export default {
     return {
       projets: data,
       isDesign: true,
+      mm: gsap.matchMedia(), // Instancia globalmente
     };
   },
   computed: {
@@ -83,43 +84,30 @@ export default {
     ScrollTrigger.refresh();
     gsap.registerPlugin(ScrollTrigger);
     this.initGSAPAnimations();
-    window.addEventListener("resize", ScrollTrigger.refresh());
+    window.addEventListener("resize", this.refreshScrollTrigger);
   },
   unmounted() {
-    window.removeEventListener("resize", ScrollTrigger.refresh());
-  },
-  setup() {
-    const beforeEnter = (el) => {
-      el.style.opacity = 0;
-    };
-    const enter = (el, done) => {
-      gsap.to(el, {
-        duration: 2,
-        opacity: 1,
-        onComplete: done,
-      });
-    };
-    return { beforeEnter, enter };
+    window.removeEventListener("resize", this.refreshScrollTrigger);
   },
   methods: {
+    refreshScrollTrigger() {
+      ScrollTrigger.refresh();
+    },
+    beforeEnter(el) {
+      el.style.opacity = 0;
+    },
+    enter(el, done) {
+      gsap.to(el, { duration: 2, opacity: 1, onComplete: done });
+    },
     initGSAPAnimations() {
       this.revealImages();
       this.revealContent();
     },
-    // handleResize() {
-    //   ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Elimina triggers antiguos
-    //   this.initGSAPAnimations();
-    //   ScrollTrigger.refresh(); // Asegúrate de que se recalculan
-    // },
-    toggleCategory(index) {
-      if (this.isDesign !== (index === 0)) {
-        // Cambia la categoría solo si el índice del botón clicado es diferente al actual
-        this.isDesign = index === 0;
-      }
+    toggleCategory(value) {
+      this.isDesign = value;
     },
     revealImages() {
-      let mm = gsap.matchMedia();
-      mm.add("(min-width: 800px)", () => {
+      this.mm.add("(min-width: 800px)", () => {
         let images = gsap.utils.toArray(".img-container");
         images.forEach((image) => {
           gsap.fromTo(
@@ -136,22 +124,25 @@ export default {
             }
           );
         });
+        // Limpieza de GSAP cuando el matchMedia deja de aplicar
+        return () =>
+          images.forEach((image) => ScrollTrigger.killTweensOf(image));
       });
     },
     revealContent() {
       this.$nextTick(() => {
-        let mm = gsap.matchMedia();
-        mm.add("(min-width: 800px)", () => {
+        this.mm.add("(min-width: 800px)", () => {
           let el = gsap.utils.toArray(".scroll-content");
           el.forEach((element) => {
             gsap.from(element, {
               scrollTrigger: { trigger: element },
               duration: 0.7,
               ease: "power2",
-              y: 70,
+              y: 100,
               opacity: 1,
-              stagger: 0.9,
+              stagger: 0.7,
             });
+            return () => ScrollTrigger.getAll().forEach((t) => t.kill());
           });
         });
       });
@@ -213,7 +204,7 @@ export default {
 .little-dot {
   width: 5px;
   height: 5px;
-  background-color: #616fe4;
+  background-color: var(--purple);
   border-radius: 5px;
   margin-right: 5px;
 }
@@ -229,11 +220,10 @@ export default {
 .img-container {
   grid-column: 3/4;
   grid-row: 1/2;
-  background-color: #b2bdfb;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
 }
 .sub-container {
   height: 100%;

@@ -11,21 +11,30 @@
             <p class="anim-2">{{ $t("aboutP4") }}</p>
           </div>
           <div class="bloc-1-img">
-            <img src="images/life01.png" alt="pictures" class="anim-2" />
-            <div class="shape-01"></div>
+            <img
+              src="images/life01.png"
+              alt="collage de fotos"
+              class="anim-2 parallax"
+            />
+            <div class="shape-01 parallax"></div>
           </div>
         </div>
+
         <div class="bloc-2">
           <div class="bloc-2-img">
-            <img src="images/life02.png" alt="pictures" class="anim-2" />
-            <div class="shape-02"></div>
+            <img
+              src="images/life02.png"
+              alt="collage de fotos"
+              class="anim-2 parallax"
+            />
+            <div class="shape-02 parallax"></div>
           </div>
+
           <div class="bloc-2-txt">
             <p class="anim-2">{{ $t("aboutP5") }}</p>
             <p class="anim-2">{{ $t("aboutP6") }}</p>
           </div>
         </div>
-        <a href=""></a>
 
         <a
           href="images/CV-Betsa-Meneses.pdf"
@@ -63,8 +72,7 @@ export default {
   },
   methods: {
     aboutAnimation() {
-      let tl = gsap.timeline();
-      tl.to(".anim-2", {
+      gsap.to(".anim-2", {
         stagger: 0.1,
         opacity: 1,
         duration: 1,
@@ -75,23 +83,21 @@ export default {
     parallaxShapes() {
       let mm = gsap.matchMedia();
       mm.add("(min-width: 800px)", () => {
-        gsap.to(".shape-01", {
-          y: -120,
-          scrollTrigger: {
-            trigger: ".bloc-1-txt",
-            start: "top center+=200",
-            scrub: 2,
-          },
+        gsap.utils.toArray(".parallax").forEach((el, index) => {
+          gsap.to(el, {
+            y: -60,
+            scrollTrigger: {
+              trigger: el,
+              start: "top center+=200",
+              scrub: 2,
+            },
+            delay: index * 0.4, // Agrega un delay progresivo para cada elemento
+          });
         });
-
-        gsap.to(".shape-02", {
-          y: -120,
-          scrollTrigger: {
-            trigger: ".bloc-2",
-            start: "top center+=200",
-            scrub: 2,
-          },
-        });
+      });
+      // Desactiva las animaciones en pantallas pequeñas
+      mm.add("(max-width: 799px)", () => {
+        gsap.set(".parallax", { y: 0 });
       });
     },
   },

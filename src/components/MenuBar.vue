@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="nav-desktop">
+    <nav class="nav-desktop" ref="navbar" :class="{ scrolled: isScrolled }">
       <!-- logo -->
       <router-link to="/" class="btn-name">
         <img src="/images/logob.png" alt="logo betsa" class="logo-desktop" />
@@ -16,12 +16,8 @@
         </router-link>
       </div>
       <!-- menu hamburguesa -->
-      <div class="btn-burguer-ctn">
-        <div
-          class="btn-burguer"
-          :class="[isOpen ? 'active' : '']"
-          @click="toggleMenu()"
-        >
+      <div class="btn-burguer-ctn" @click="toggleMenu">
+        <div class="btn-burguer" :class="{ active: isOpen }">
           <span class="bar"></span>
           <span class="bar"></span>
         </div>
@@ -29,7 +25,7 @@
     </nav>
 
     <!-- menu movil abierto -->
-    <nav class="nav-mobile">
+    <nav v-show="isOpen" class="nav-mobile">
       <router-link to="/" @click="toggleMenu()" class="btn-nav-mobile">
         Home
       </router-link>
@@ -54,56 +50,36 @@ export default {
   data() {
     return {
       isOpen: false,
-      isSelect: false,
+      isScrolled: false,
     };
   },
   created() {
     window.addEventListener("scroll", this.showingNavbar);
-    window.addEventListener("resize", this.handleResize);
+    window.addEventListener("resize", this.showingNavbar); // Detectar cambios de tamaño
   },
 
   mounted() {
-    gsap.to(".nav-desktop", { opacity: 1, duration: 0.5, ease: "power3.out" });
+    gsap.to(this.$refs.navbar, {
+      opacity: 1,
+      duration: 0.5,
+      ease: "power3.out",
+    });
   },
   beforeUnmount() {
     window.removeEventListener("scroll", this.showingNavbar);
-    window.removeEventListener("resize", this.handleResize);
+    window.removeEventListener("resize", this.showingNavbar);
   },
   methods: {
     showingNavbar() {
-  let navbar = document.querySelector(".nav-desktop");
-
-  if (window.innerWidth > 768) {
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 0) {
-        navbar.classList.add("scrolled");
+      if (window.innerWidth > 768) {
+        this.isScrolled = window.scrollY > 0;
       } else {
-        navbar.classList.remove("scrolled");
+        this.isScrolled = false; // Asegurar que el navbar vuelve a su estado original en móvil
       }
-    });
-  }
-},
+    },
 
     toggleMenu() {
       this.isOpen = !this.isOpen;
-      this.handleResize();
-    },
-    handleResize() {
-      if (this.isOpen && window.innerWidth <= 768) {
-        gsap.to(".nav-mobile", {
-          opacity: 1,
-          duration: 0.1,
-          ease: "power3.out",
-        });
-        gsap.to(".nav-mobile", { display: "flex" });
-      } else {
-        gsap.to(".nav-mobile", {
-          opacity: 0,
-          duration: 0.05,
-          ease: "power3.out",
-        });
-        gsap.to(".nav-mobile", { display: "none" });
-      }
     },
   },
 };
@@ -160,11 +136,9 @@ nav.scrolled {
   height: 38px;
 }
 /* burguer menu */
+
 .btn-burguer-ctn {
-  /* position: fixed;
-  top: 35px;
-  right:40px;   */
-  display: none; 
+  display: none;
   z-index: 50;
 }
 .btn-burguer {
@@ -208,23 +182,24 @@ nav.scrolled {
   width: calc(50% - 20px);
   height: 60%;
   padding: 15px;
-  background: #FFEEAE;
-  border-radius: 20px 0 20px 20px;
-  opacity: 0;
-  display: none;
+  background: var(--yellow);
+  border: var(--linesStyle);
+  border-radius: 20px 0 30px 30px;
+  /* opacity: 0;
+  display: none; */
   transition: all 0.7s;
   z-index: 15;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: var(--linesStyle);
 }
 .nav-mobile.active {
   opacity: 1;
 }
 .btn-nav-mobile {
   font-size: 32px;
-  font-family: "Inter", sans-serif;
+  font-family: "pp_eikothin", sans-serif;
+  font-weight: normal;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
@@ -243,7 +218,7 @@ nav.scrolled {
   background-size: 100% 2px;
 }
 @media only screen and (max-width: 768px) {
-  .nav-desktop{
+  .nav-desktop {
     padding: 0 20px;
   }
   .right-buttons {
@@ -254,7 +229,7 @@ nav.scrolled {
     z-index: 50;
   }
 }
-@media only screen and (max-width: 480px) { 
+@media only screen and (max-width: 480px) {
   .nav-mobile {
     width: calc(100% - 20px);
     height: 50%;

@@ -80,6 +80,8 @@ export default {
   --grey4: #e0e0e0;
   --white-bg: #fbfaf9;
   --pink: #f1a1e3;
+  --purple:#616fe4;
+  --yellow:#ffeeae;
   --linesStyle: solid 0.5px var(--grey4);
 }
 
