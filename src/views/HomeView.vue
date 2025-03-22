@@ -15,17 +15,18 @@
             </div>
             <div class="project-description">
               <h4 class="scroll-content">{{ projet.title }}</h4>
-              <p class="scroll-content">{{ $t(projet.homeText) }}</p>
+              
               <ul class="tech-label-container scroll-content">
                 <li
                   class="tech-label"
-                  v-for="element in projet.techno"
+                  v-for="element in projet.tags"
                   :key="element"
                 >
                   <div class="little-dot"></div>
                   {{ element }}
                 </li>
               </ul>
+              <p class="scroll-content">{{ $t(projet.homeText) }}</p>
               <router-link
                 :to="{ name: 'single', params: { projetId: projet.id } }"
               >
@@ -36,7 +37,6 @@
           <router-link
             class="img-container"
             :to="{ name: 'single', params: { projetId: projet.id } }"
-            :style="{ backgroundColor: projet.backgroundImage }"
           >
             <div class="sub-container">
               <img
@@ -155,7 +155,7 @@ export default {
 .project-content-container {
   display: grid;
   grid-template-columns: 15% 35% 35% 15%;
-  grid-template-rows: 1fr 100px;
+  grid-template-rows: 450px 100px;
   transition: 1s ease all;
 }
 /* Dont delete this */
@@ -176,6 +176,7 @@ export default {
   font-size: 170px;
   line-height: 170px;
   font-family: "pp_eikothin", sans-serif;
+  font-weight: normal;
   left: -50px;
 }
 .project-description {
@@ -184,14 +185,14 @@ export default {
   line-height: 28px;
 }
 .project-description h4 {
-  margin: 0;
-  font-size: 36px;
+  margin: 0 0 15px;
+  font-size: 54px;
   line-height: 42px;
   font-family: "pp_eikothin", sans-serif;
-  font-weight: 600px;
+  font-weight: normal;
 }
 .project-description p {
-  margin: 10px 0 40px;
+  margin: 20px 0 60px;
 }
 /* Projet labels */
 .tech-label-container {
@@ -212,7 +213,7 @@ export default {
   font-size: 0.9em;
   font-weight: 500;
   text-align: center;
-  margin: 0 5px;
+  margin: 0 10px 0 0;
   list-style: none;
   display: flex;
   align-items: center;
@@ -223,7 +224,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
 }
 .sub-container {
   height: 100%;
@@ -297,11 +297,11 @@ export default {
     display: none;
   }
   .img-container {
-    margin: 0 20px;
     opacity: 1;
   }
   .project-description h4 {
-    font-size: 28px;
+    font-size: 36px;
+    margin-bottom: 10px;
   }
   .project-selection {
     padding: 0 20px;
@@ -309,8 +309,14 @@ export default {
   .project-selection ul {
     justify-content: space-between;
   }
+  .tech-label{
+    font-size: 14px;
+  }
   .projet-img {
-    padding: 3px;
+    padding: 0px;
+  }
+  .project-description p{
+    margin: 15px 0 30px;
   }
   .projet-img:hover {
     transform: none;

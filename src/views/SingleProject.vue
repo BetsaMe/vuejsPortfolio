@@ -17,7 +17,16 @@
       <div class="introduction-bloc">
         <div class="left-bloc">
           <h5>Category</h5>
-          <p>{{ singleProject.subtitle }}</p>
+          <ul class="tech-label-container scroll-content">
+            <li
+              class="tech-label"
+              v-for="element in singleProject.tags"
+              :key="element"
+            >
+              {{ element }}
+            </li>
+          </ul>
+          <!-- <p>{{ singleProject.subtitle }}</p> -->
           <h5>Rol</h5>
           <p>{{ singleProject.rol }}</p>
           <h5>Year</h5>
@@ -45,7 +54,7 @@
           >
         </div>
       </div>
-    </div> 
+    </div>
 
     <div class="content">
       <div
@@ -55,7 +64,7 @@
       >
         <div class="text-bloc">
           <h4>{{ $t(single.title) }}</h4>
-          <p v-if="single.paragraph">  {{ $t(single.paragraph) }}</p>
+          <p v-if="single.paragraph">{{ $t(single.paragraph) }}</p>
         </div>
         <img
           :src="single.img"
@@ -63,7 +72,12 @@
           class="project-paragraph-images"
         />
       </div>
-      <a :href="singleProject.link" target="_blank" class="btn-info-ctn" v-if="singleProject.link">
+      <a
+        :href="singleProject.link"
+        target="_blank"
+        class="btn-info-ctn"
+        v-if="singleProject.link"
+      >
         <DownloadBtn
           title="saber más"
           :bgColor="'#fff'"
@@ -251,7 +265,7 @@ export default {
 .move-foward:hover {
   color: #616fe4;
 }
-.partner-style{
+.partner-style {
   color: #616fe4;
   text-decoration: underline;
 }

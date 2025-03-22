@@ -1,9 +1,11 @@
 {
     "buttonProfile":"Profile",
     "buttonContact": "contact",
-    "designerText":"Ux Ui Designer",
-    "devText":"Developer.",
-    "description": "Hi! 🌟 I'm Betsa, a designer and developer focused on creating websites and applications that are attractive, functional and easy to navigate. Do you have an idea in mind? Let's make it a reality together. 🚀",
+    "grettings":"Hi! I'm Betsa, and I specialize in",
+    "firstLineH1":"Ux Ui Design",
+    "secondLineH1":"web Development.",
+    "description": "I'm here to help you create websites and applications that are attractive, functional and easy to navigate. Do you have an idea in mind?",
+    "txtcolor":"Let's make it a reality together.",
     "projectTitle":"Projects",
     "filtertext":"Development",
     "button01":"discover",
@@ -154,7 +156,7 @@
     },
     "coa":{
       "homeText":"Custom website development",
-      "resume":"Website developed with WordPress and Elementor Pro. COA&co is a new brand of protein chocolates. The design was created by:"
+      "resume":"Website developed with WordPress and Elementor Pro. COA&co is a new brand of protein chocolates. The design was created by Andrea Galindo"
     },
     "download":"download cv",
     "contactTitle":"Get in touch!",

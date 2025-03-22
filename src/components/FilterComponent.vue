@@ -1,13 +1,13 @@
 <template>
   <ul class="category-tabs scroll-fade">
     <li
-      class="btn-filter purple-btn"
+      class="btn-filter"
       :class="{ 'selected-tab-purple': isDesign }"
       @click="$emit('changeCategory', true)"
     >
       <div class="ctn-arrow" v-if="isDesign">
         <img
-          :src="isDesign && '/images/whitearrow-01.svg'"
+          :src="'/images/whitearrow-01.svg'"
           class="arrow"
           alt="arrow"
         />
@@ -15,13 +15,13 @@
       <span class="text">UI/UX Design</span>
     </li>
     <li
-      class="btn-filter yellow-btn"
+      class="btn-filter"
       :class="{ 'selected-tab-yellow': !isDesign }"
       @click="$emit('changeCategory', false)"
     >
       <div class="ctn-arrow" v-if="!isDesign">
         <img
-          :src="!isDesign && '/images/arrow-right.svg'"
+          :src="'/images/whitearrow-01.svg'"
           class="arrow"
           alt="arrow"
         />
@@ -100,21 +100,19 @@ export default {
   border-radius: 60px;
   transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
 }
-.purple-btn,
-.yellow-btn {
+.btn-filter{
   background-color: #fff;
   border: 1px solid var(--purple);
 }
-.yellow-btn:hover,
-.selected-tab-yellow {
-  background-color: var(--yellow);
+.btn-filter:hover{
+  background-color: #B2BDFB;
   color: var(--grey2);
 }
-.purple-btn:hover,
-.selected-tab-purple {
+.selected-tab-yellow, .selected-tab-purple{
   background-color: var(--purple);
   color: #fff;
 }
+
 .btn-filter .text {
   font-weight: normal;
   font-size: 16px;
@@ -157,7 +155,7 @@ export default {
     font-size: 60px;
   }
   .btn-filter {
-    min-width: 160px;
+    min-width: 140px;
   }
   .btn-filter .text {
     font-size: 14px;
@@ -171,13 +169,14 @@ export default {
     font-size: 65px;
     margin-bottom: 10px;
     width: 100%;
+    padding: 0 10px;
   }
   .project-selection ul {
     margin: 25px 0;
-    flex-direction: column;
+    justify-content:space-around;
   }
   .project-selection ul li {
-    margin: 10px;
+    margin: 4px;
   }
   .btn-filter {
     height: 44px;

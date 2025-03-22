@@ -1,9 +1,11 @@
 {
   "buttonProfile":"Profil",
   "buttonContact": "contact",
-  "designerText":"Ux Ui Designer",
-  "devText":"Intégratrice.",
-  "description": "Salut ! 🌟 Je suis Betsa, designer et développeuse spécialisée dans la création de sites web et d’applications à la fois esthétiques, fonctionnels et faciles à utiliser. Tu as une idée en tête ? Donnons-lui vie ensemble ! 🚀",
+  "grettings":"Bonjour ! Je m'appelle Betsa et je fais du",
+  "firstLineH1":"Ux Ui Design",
+  "secondLineH1":"web Development.",
+  "description": "Je suis là pour t'aider à créer de sites web et d’applications à la fois esthétiques, fonctionnels et faciles à utiliser. Tu as une idée en tête ?",
+  "txtcolor":"Donnons-lui vie ensemble!.",
   "projectTitle":"Projets",
   "filtertext":"Intégration",
   "button01":"decouvrir",
@@ -129,7 +131,7 @@
   },
   "coa":{
     "homeText":"Custom website development",
-    "resume":"Site web développé avec WordPress et Elementor Pro. COA&co est une nouvelle marque de chocolats protéinés. Le design a été réalisé par"
+    "resume":"Site web développé avec WordPress et Elementor Pro. COA&co est une nouvelle marque de chocolats protéinés. Le design a été réalisé par Andrea Galindo"
   },
   "download":"télécharger cv",
   "contactTitle":"Contacte-moi !",

@@ -1,17 +1,26 @@
 <template>
   <section id="hero">
     <div class="center-bloc">
-      <h1 class="fade-in">{{ $t("designerText") }}</h1>
-      <h2 class="fade-in second-line">& {{ $t("devText") }}</h2>
-      <div class="bloc-description">
-        <p class="fade-in description">{{ $t("description") }}</p>
-        <div class="loop-elements">
-          <img
-            class="animated-text fade-in-left"
-            src="/images/textocircular2.png"
-            alt="circular text"
-          />
-        </div>
+      <span class="box-star4">
+        <img class="star4" src="/images/star4.svg" alt="star" />
+        <span>{{ $t("grettings") }}</span>
+        <img class="star4" src="/images/star4.svg" alt="star" />
+      </span>
+      <h1>
+        <span class="par-1">{{ $t("firstLineH1") }}</span>
+        <span class="par-2">& {{ $t("secondLineH1") }}</span>
+      </h1>
+      <p class="fade-in description">
+        {{ $t("description") }}
+        <span class="highlightText">{{ $t("txtcolor") }}</span>
+      </p>
+
+      <div class="box-animated-text">
+        <img
+          class="animated-text fade-in-left"
+          src="/images/textocircularv2.png"
+          alt="circular text"
+        />
       </div>
     </div>
   </section>
@@ -28,24 +37,65 @@ export default {
   methods: {
     heroAnimation() {
       let tl = gsap.timeline();
-      tl.to(".fade-in", {
-        stagger: 0.15,
-        opacity: 1,
+      // Animación de las dos líneas del h1 con un pequeño delay entre ellas
+      tl.from(".box-star4", {
+        opacity: 0,
         duration: 0.7,
-        y: 0,
-        ease: "Power1.easeOut",
+        y: 20,
+        ease: "power1.out",
       })
+
+        .from(".par-1", {
+          opacity: 0,
+          y: 40,
+          duration: 0.8,
+          ease: "power1.out",
+        })
+        .from(
+          ".par-2",
+          {
+            opacity: 0,
+            y: 40,
+            duration: 0.8,
+            ease: "power1.out",
+          },
+          "-=0.5"
+        ) // Empieza antes de que termine la anterior para un efecto más fluido
+
+        .to(
+          ".fade-in",
+          {
+            opacity: 1,
+            duration: 0.7,
+            y: 0,
+            ease: "power1.out",
+          },
+          "-=0.5"
+        )
+        .to(
+          ".highlightText",
+          {
+            backgroundSize: "100% 100%", // Expande el subrayado
+            duration: 0.7,
+            ease: "power1.out",
+          },
+          "-=0.3"
+        ) // Empieza un poco antes del final de la animación anterior
+        .to(
+          ".fade-in-left",
+          {
+            opacity: 1,
+            rotation: 45, // Rotación en grados
+            duration: 0.7,
+            x: 0,
+            ease: "Power1.easeOut",
+          },
+          "-=0.7"
+        )
         .to(".fade-in-left", {
           opacity: 1,
-          rotation: 45, // Rotación en grados
-          duration: 0.7,
-          x: 0,
-          ease: "Power1.easeOut",
-        })
-        .to(".animated-text", {
-          opacity: 1,
           rotation: "+=360", // Rotación en grados
-          duration: 9, // Duración en segundos
+          duration: 16, // Duración en segundos
           repeat: -1, // Repetición infinita
           ease: "linear",
         });
@@ -57,8 +107,20 @@ export default {
 <style>
 /* Hero section */
 
+h1,
+h2,
+h3 {
+  font-family: "pp_eikothin", sans-serif;
+  font-weight: normal;
+}
+h1 {
+  font-size: 9vw;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin: 0;
+}
 #hero {
-  display: flex;
+  /* display: flex; */
   width: 100%;
   min-height: 100vh;
   margin: auto;
@@ -66,67 +128,71 @@ export default {
 }
 .center-bloc {
   margin: 0 auto;
-  width: 70%;
-  padding: 135px 0 135px 20px;
+  width: 100%;
+  padding: 135px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-h1,
-h2,
-.second-line,
-h3 {
-  font-family: "pp_eikothin", sans-serif;
-  font-weight: normal;
-}
-h1,
-.second-line {
-  font-size: 9vw;
-  letter-spacing: -0.02em;
-  line-height: 100%;
-  margin: 0;
-}
-.bloc-description {
-  width: 100%;
-  display: flex;
-  position: relative;
+  align-items: center;
   overflow: hidden;
+}
+
+/* lineas del h1 */
+.par-1,
+.par-2 {
+  display: block;
 }
 .description {
   font-size: 1.15em;
   line-height: 1.5em;
-  margin-right: 15px;
-  width: 48%;
+  width: 30%;
   margin-top: 60px;
-  background-color: var(--yellow);
-  padding: 30px 35px;
-  border-radius: 60px 60px 60px 0;
-}
-.loop-elements {
-  position: relative;
-  width: 50%;
+  text-align: center;
+  color:#868585;
 }
 
+.box-animated-text {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  top: 0;
+}
+.animated-text {
+  width: 220px;
+  height: 220px;
+  position: absolute;
+  bottom: 0px;
+  right: -110px;
+}
+.box-star4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.star4 {
+  height: 14px;
+  margin: 0 5px;
+}
+.highlightText {
+  background-image: linear-gradient(180deg, #adbaff, #adbaff);
+  background-repeat: no-repeat;
+  background-size: 0.2em 100%; /* Estado inicial pequeño */
+  background-position: 0 88%;
+  color: var(--grey2);
+}
 .fade-in {
   opacity: 0;
-  transform: translateY(95px);
+  transform: translateY(65px);
 }
 .fade-in-left {
   opacity: 0;
   transform: translateX(95px);
 }
-.animated-text {
-  width: 230px;
-  height: 230px;
-  position: absolute;
-  bottom: 0px;
-  right: -120px;
-}
 
 /* End of hero section */
 
 @media screen and (max-width: 1024px) {
-
   .description {
     width: 60%;
   }
@@ -137,25 +203,23 @@ h1,
     font-size: 1em;
     margin-top: 50px;
   }
-  .bloc-description {
-    flex-direction: column;
-  }
   .center-bloc {
     background-color: transparent;
     width: 80%;
     padding-bottom: 80px;
   }
-  .loop-elements {
+  .box-animated-text {
     position: relative;
     width: 100%;
     height: 30vh;
   }
-  h1,
-  .second-line {
-    font-size: 10vw;
+  .animated-text {
+    width: 180px;
+    height: 180px;
+    right: -90px;
   }
-  #all-projects h2 {
-    font-size: 80px;
+  h1 {
+    font-size: 10vw;
   }
 }
 
@@ -164,29 +228,26 @@ h1,
     width: 100%;
     margin: 0;
     padding: 100px 20px 0px;
-    height: 110vh;
-    
+    height: 100vh;
   }
   .description {
     width: 100%;
     margin-top: 30px;
-    padding: 20px;
-    border-radius: 40px 40px 40px 0;
   }
-  h1,
-  .second-line {
-    font-size: 14vw;
-    line-height: 105%;
+  h1 {
+    font-size: 48px;
   }
-  .bloc-description {
-    flex-direction: column;
+  .box-animated-text {
+    height: 100px;
   }
   .animated-text {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     position: absolute;
-    bottom: 20px;
-    right: -70px;
+    top: -25px;
+  }
+  .box-star4 span {
+    font-size: 15px;
   }
 }
 </style>
