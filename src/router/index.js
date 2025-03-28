@@ -12,7 +12,7 @@ const routes = [
     component: () => import('@/views/AboutView.vue'),
   },
   {
-    path: '/work/:projetId',
+    path: '/single/:slug',
     name: 'single',
     component: () => import('@/views/SingleProject.vue'),
   },

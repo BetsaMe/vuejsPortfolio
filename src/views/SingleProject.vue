@@ -94,7 +94,7 @@
         <img src="/images/arrow-left.svg" alt="arrow" />
         <li>previous</li>
       </div>
-      <div class="move-foward" @click="goFoward">
+      <div class="move-foward" @click="goForward">
         <img src="/images/arrow-right.svg" alt="arrow" />
         <li>next</li>
       </div>
@@ -114,39 +114,53 @@ export default {
     return {
       projets: data,
       singleProject: null,
-      currentId: this.$route.params.projetId,
     };
   },
   created() {
     this.getSingleProjet();
   },
   computed: {
-    paramsId() {
-      return this.$route.params.projetId;
+    paramsSlug() {
+      return this.$route.params.slug;
     },
   },
   methods: {
     getSingleProjet() {
-      this.singleProject = this.projets.filter(
-        (projet) => projet.id === parseInt(this.paramsId)
-      )[0];
-    },
-    goFoward() {
-      let nextId = parseInt(this.currentId) + 1;
+      this.singleProject = this.projets.find(
+        (projet) => projet.slug === this.paramsSlug // Comparamos con slug
+      );
 
-      if (nextId > this.projets.length) {
-        return;
-      } else {
-        this.$router.replace({ path: "/work/" + nextId });
+      if (!this.singleProject) {
+        console.error("Proyecto no encontrado:", this.paramsSlug);
+        this.$router.push("/404"); // Redirige a una página de error si no se encuentra
+      }
+    },
+    goForward() {
+      // Encuentra el índice del proyecto actual en el array
+      const currentIndex = this.projets.findIndex(
+        (projet) => projet.slug === this.paramsSlug
+      );
+ 
+      if (currentIndex !== -1 && currentIndex < this.projets.length - 1) {
+        const nextProject = this.projets[currentIndex + 1];
+        this.$router.push({
+          name: "single",
+          params: { slug: nextProject.slug },
+        });
       }
     },
     goBack() {
-      let prevId = parseInt(this.currentId) - 1;
+      const currentIndex = this.projets.findIndex(
+        (projet) => projet.slug === this.paramsSlug
+      );
+      console.log(currentIndex);
 
-      if (prevId < 1) {
-        return;
-      } else {
-        this.$router.replace({ path: "/work/" + prevId });
+      if (currentIndex > 0) {
+        const prevProject = this.projets[currentIndex - 1];
+        this.$router.push({
+          name: "single",
+          params: { slug: prevProject.slug },
+        });
       }
     },
   },
@@ -188,7 +202,7 @@ export default {
   margin: 0 0 35px;
 }
 .left-bloc ul {
-  margin: 0;
+  margin: 0 0 35px;
   display: flex;
   padding: 0;
   flex-wrap: wrap;

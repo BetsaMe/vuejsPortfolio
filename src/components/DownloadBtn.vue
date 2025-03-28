@@ -6,7 +6,7 @@
     @mouseleave="hover = false"
   >
 
-    <span class="label" :style="labelStyles">{{ $t(title) }}</span>
+    <span class="label" :style="labelStyles">{{ title }}</span>
     <img
       src="/images/whitearrow-01.svg"
       alt="arrow"
@@ -61,22 +61,6 @@ export default {
         backgroundColor: this.hover ? this.hoverBgColor : this.bgColor,
         color: this.hover ? this.hoverTextColor : this.textColor,
         border: `1px solid ${this.hover ? this.hoverBorderColor : this.borderColor}`,
-        transition: "all 0.3s ease",
-        display: "inline-flex", 
-        alignItems: "center", 
-        justifyContent: "center", 
-        padding: "12px 28px",
-        borderRadius: "60px",
-        textTransform: "uppercase",
-        cursor: "pointer",
-        fontSize: "15px",
-        fontWeight: "bold",
-        lineHeight: "24px",
-        fontFamily: '"Montserrat", sans-serif',
-        position: "relative",
-        overflow: "hidden", // Ocultar contenido extra
-        whiteSpace: "nowrap", // Evitar que el texto se envuelva
-        width: "auto", // Asegurar que el ancho sea automático
       };
     },
     labelStyles() {
@@ -99,10 +83,26 @@ export default {
 };
 </script>
 
+<style>
+.btn-arrow-dynamic {
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 12px 28px;
+    border-radius: 60px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 24px;
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+    overflow: hidden;   /* Ocultar contenido extra */
+    white-space: nowrap; /* Evitar que el texto se envuelva */
+    width: auto; /* Asegurar que el ancho sea automático */
+}
 
-
-
-<style scoped>
 @media only screen and (max-width: 480px){
   .btn-arrow-dynamic{
     padding: 10px 30px !important;

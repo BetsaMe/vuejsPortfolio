@@ -14,7 +14,7 @@
               <span class="big-number"> {{ projet.number }} </span>
             </div>
             <div class="project-description">
-              <h4 class="scroll-content">{{ projet.title }}</h4>
+              <h4 class="scroll-content">{{ projet.name }}</h4>
               
               <ul class="tech-label-container scroll-content">
                 <li
@@ -28,15 +28,17 @@
               </ul>
               <p class="scroll-content">{{ $t(projet.homeText) }}</p>
               <router-link
-                :to="{ name: 'single', params: { projetId: projet.id } }"
+                :to="{ name: 'single', params: { slug: projet.slug } }"
               >
-                <ArrowBtn :title="'button01'" class="scroll-content" />
+                
+                <ArrowBtn :title="$t(('button01'))" class="scroll-content" />
               </router-link>
             </div>
           </div>
           <router-link
             class="img-container"
-            :to="{ name: 'single', params: { projetId: projet.id } }"
+            :to="{ name: 'single', params: { slug: projet.slug } }"
+
           >
             <div class="sub-container">
               <img
@@ -79,7 +81,11 @@ export default {
       const category = this.isDesign ? "design" : "code";
       return this.projets.filter((projet) => projet.category === category);
     },
+    projectSlug() {
+      return this.$route.params.slug;
+    },
   },
+
   mounted() {
     ScrollTrigger.refresh();
     gsap.registerPlugin(ScrollTrigger);

@@ -4,7 +4,7 @@
     :target="target"
     class="btn-arrow"
   >    
-    <span>{{ $t(title) }}</span>
+    <span>{{ title }}</span>
     <img src="/images/arrow-right.svg" alt="arrow" class="after"/>
   </a>
 </template>

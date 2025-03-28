@@ -16,11 +16,7 @@
       </p>
 
       <div class="box-animated-text">
-        <img
-          class="animated-text fade-in-left"
-          src="/images/textocircularv2.png"
-          alt="circular text"
-        />
+        <RoundBtn />
       </div>
     </div>
   </section>
@@ -28,9 +24,10 @@
 
 <script>
 import gsap from "gsap";
+import RoundBtn from "./RoundBtn.vue";
 export default {
   name: "HelloWorld",
-  components: {},
+  components: { RoundBtn },
   mounted() {
     this.heroAnimation();
   },
@@ -90,7 +87,7 @@ export default {
             x: 0,
             ease: "Power1.easeOut",
           },
-          "-=0.7"
+          
         )
         .to(".fade-in-left", {
           opacity: 1,
@@ -148,22 +145,18 @@ h1 {
   width: 30%;
   margin-top: 60px;
   text-align: center;
-  color:#868585;
+  color: #868585;
 }
 
 .box-animated-text {
+  /*caja externa*/
   position: relative;
   width: 100%;
   height: 100px;
   top: 0;
+  right: 0;
 }
-.animated-text {
-  width: 220px;
-  height: 220px;
-  position: absolute;
-  bottom: 0px;
-  right: -110px;
-}
+
 .box-star4 {
   display: flex;
   justify-content: center;
@@ -187,7 +180,7 @@ h1 {
 }
 .fade-in-left {
   opacity: 0;
-  transform: translateX(95px);
+  transform: translateX(50px);
 }
 
 /* End of hero section */
@@ -208,16 +201,7 @@ h1 {
     width: 80%;
     padding-bottom: 80px;
   }
-  .box-animated-text {
-    position: relative;
-    width: 100%;
-    height: 30vh;
-  }
-  .animated-text {
-    width: 180px;
-    height: 180px;
-    right: -90px;
-  }
+
   h1 {
     font-size: 10vw;
   }
@@ -237,15 +221,7 @@ h1 {
   h1 {
     font-size: 48px;
   }
-  .box-animated-text {
-    height: 100px;
-  }
-  .animated-text {
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    top: -25px;
-  }
+
   .box-star4 span {
     font-size: 15px;
   }

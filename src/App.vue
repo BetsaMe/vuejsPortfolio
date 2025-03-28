@@ -1,7 +1,7 @@
 <template>
     <div>
-        <LoaderPerso v-if="loading"/>
-        <div v-else>       
+      <LoaderPerso v-if="loading" @loaded="handleLoaderFinished"/>
+      <div v-else>       
           <BgLines />
           <div class="cursor cursor--small"></div>
           <MenuBar />
@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import LoaderPerso from "@/components/LoaderPerso.vue";
 import MenuBar from "@/components/MenuBar.vue";
 import FooterSection from "@/components/FooterSection.vue";
@@ -25,17 +26,14 @@ export default {
     BgLines,
     LoaderPerso
   },
-  data() {
-    return {
-      loading: true,
-      offset:0
+  setup() {
+    const loading = ref(true); 
+
+    const handleLoaderFinished = () => {
+      loading.value = false; 
     };
-  },
-  created() {
-    document.title = "Betsabé Meneses";
-  },
-  mounted(){
-      setTimeout(() => (this.loading = false), 1650);
+
+    return { loading, handleLoaderFinished };
   }
 };
 </script>

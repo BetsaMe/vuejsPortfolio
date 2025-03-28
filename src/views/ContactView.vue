@@ -119,6 +119,9 @@ export default {
         ease: "power2.inOut",
       });
     },
+
+
+
   },
 };
 </script>

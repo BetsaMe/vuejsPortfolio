@@ -1,30 +1,37 @@
 <template>
-    <div class="loader-bg">
+    <div  class="loader-bg">
         <div class="progress-container">
           <div class="progress">
-              <div class="progress-bar">                
-              </div>
+            <div ref="progressBar" class="progress-bar"></div>
           </div>
         </div>
     </div>
 </template>
 
 <script>
+import { ref, onMounted} from "vue";
 import gsap from "gsap";
+
 export default {
-  name: 'LoaderPerso',
-    mounted() {
-      this.loaderAnim();
+  name: "LoaderPerso",
+  setup(_, { emit }) { // Recibir `emit` correctamente en Vue 3
+    const progressBar = ref(null);
+
+    onMounted(() => {
+      gsap
+        .timeline()
+        .to(progressBar.value, { duration: 1.2, width: "100%", ease: "power1.out" })
+        .to(".loader-bg", { duration: 0.4, opacity: 0, ease: "power1.out", onComplete: () => {
+          emit("loaded"); // 🔥 Emitimos el evento "loaded" cuando termine la animación
+        }});
+    });
+
+    return { progressBar };
   },
-  methods: {
-    loaderAnim(){
-      let tl = gsap.timeline();
-      tl.to(".progress-bar", { duration:1.2, width: "100%", ease: "power1.out"})
-        .to(".loader-bg", { duration:0.4, opacity: 0, display:"none", ease: "power1.out"})
-    }    
-	} 
-}
+  emits: ["loaded"], // ✅ Definir el evento para evitar advertencias en Vue 3
+};
 </script>
+
 <style>
 .loader-bg {
   position: fixed;
